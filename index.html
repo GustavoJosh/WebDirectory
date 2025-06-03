@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultorio CADIM - Acompañamiento en Maternidad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.js"></script>
+    
+    <!-- Cargar estilos modulares -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/landing.css">
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen">
+    <!-- Página de Bienvenida -->
+    <div id="welcomePage" class="min-h-screen">
+        <!-- Hero Section -->
+        <section class="hero-bg min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
+            <div class="w-full max-w-6xl mx-auto text-center">
+                <!-- Header Principal -->
+                <div id="heroSection" class="mb-16 animate-fade-in">
+                    <!-- Se genera dinámicamente -->
+                </div>
+
+                <!-- Por qué elegirnos -->
+                <div id="whyChooseSection" class="mb-16 animate-slide-in" style="animation-delay: 0.2s">
+                    <!-- Se genera dinámicamente -->
+                </div>
+
+                <!-- Nuestras Especialidades -->
+                <div id="specialtiesSection" class="mb-16 animate-fade-in" style="animation-delay: 0.4s">
+                    <!-- Se genera dinámicamente -->
+                </div>
+
+                <!-- Call to Action -->
+                <div id="ctaSection" class="animate-fade-in" style="animation-delay: 0.6s">
+                    <!-- Se genera dinámicamente -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Página del Directorio (sin cambios) -->
+    <div id="directoryPage" class="page-hidden min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
+        <div class="w-full max-w-5xl mx-auto">
+            <!-- Header del Directorio -->
+            <header class="text-center mb-8 md:mb-12">
+                <button onclick="AppNavigation.showWelcome()" class="mb-6 text-slate-600 hover:text-slate-800 flex items-center gap-2 mx-auto transition-colors duration-200">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Volver al inicio
+                </button>
+                <h1 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">Nuestros Especialistas</h1>
+                <p class="text-lg text-slate-600 mb-2">Seleccione un doctor para conocer más detalles</p>
+                <p class="text-base text-slate-500 max-w-2xl mx-auto">Profesionales comprometidos con su salud y bienestar</p>
+            </header>
+
+            <!-- Navigation Tabs -->
+            <nav class="flex flex-col sm:flex-row justify-center items-center bg-white p-2 rounded-2xl shadow-lg border border-slate-200/50 mb-8 md:mb-12 gap-2 sm:gap-0" id="doctorTabs">
+                <!-- Los tabs se generan dinámicamente -->
+            </nav>
+
+            <!-- Doctor Profile Card -->
+            <main class="rounded-2xl shadow-xl border-2 overflow-hidden animate-fade-in" id="doctorProfile">
+                <!-- El contenido se genera dinámicamente -->
+            </main>
+        </div>
+    </div>
+
+    <!-- Cargar módulos JavaScript en orden -->
+    <script src="js/data/doctors.js"></script>
+    <script src="js/data/landingContent.js"></script>
+    <script src="js/utils/colorUtils.js"></script>
+    <script src="js/utils/iconManager.js"></script>
+    <script src="js/components/navigation.js"></script>
+    <script src="js/components/welcomePage.js"></script>
+    <script src="js/components/directoryPage.js"></script>
+    <script src="js/components/doctorProfile.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
