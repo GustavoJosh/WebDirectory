@@ -9,7 +9,14 @@ const landingContent = {
                 mother: 'assets/icons/mother-icon.svg'
             }
         },
-        title: 'Consultorio <span class="bg-gradient-to-r from-emerald-600 to-sky-600 bg-clip-text text-transparent">CADIM</span>',
+        title: `Consultorio <span class="bg-gradient-to-r from-emerald-600 to-sky-600 bg-clip-text text-transparent">CADIM</span>
+               <div class="text-sm md:text-base text-slate-600 font-medium tracking-wide mt-3">
+                   <span class="font-bold text-emerald-600">C</span>entro de 
+                   <span class="font-bold text-emerald-600">A</span>tención y 
+                   <span class="font-bold text-sky-600">D</span>iagnóstico 
+                   <span class="font-bold text-sky-600">I</span>ntegral con 
+                   <span class="font-bold text-pink-600">M</span>edicina Interna
+               </div>`,
         subtitle: 'Acompañándote en cada etapa de la maternidad',
         description: 'Especialistas dedicados al cuidado integral de la mujer, desde la fertilidad hasta la menopausia, brindando atención personalizada con la tecnología más avanzada y el toque humano que necesitas.',
         stats: [
