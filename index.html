@@ -12,200 +12,63 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/landing.css">
-    
-    <style>
-        @keyframes construction-pulse {
-            0%, 100% { opacity: 0.8; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.05); }
-        }
-        
-        .construction-banner {
-            animation: construction-pulse 3s ease-in-out infinite;
-        }
-        
-        @keyframes float-tools {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            33% { transform: translateY(-10px) rotate(5deg); }
-            66% { transform: translateY(-5px) rotate(-3deg); }
-        }
-        
-        .floating-tools {
-            animation: float-tools 4s ease-in-out infinite;
-        }
-        
-        .blur-content {
-            filter: blur(2px);
-            opacity: 0.3;
-            pointer-events: none;
-        }
-    </style>
 </head>
 <body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen" style="font-family: 'Nunito Sans', sans-serif;">
-    
-    <!-- Banner de Sitio en Construcción -->
-    <div class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 shadow-lg border-b-4 border-amber-600">
-        <div class="max-w-6xl mx-auto px-4 py-3">
-            <div class="flex items-center justify-center gap-4 text-white">
-                <div class="floating-tools text-2xl">🚧</div>
-                <div class="text-center">
-                    <p class="font-bold text-lg">🔨 Sitio en Construcción</p>
-                    <p class="text-sm opacity-90">Estamos mejorando nuestros servicios para servirle mejor</p>
+    <!-- Página de Bienvenida -->
+    <div id="welcomePage" class="min-h-screen">
+        <!-- Hero Section -->
+        <section class="hero-bg min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
+            <div class="w-full max-w-6xl mx-auto text-center">
+                <!-- Header Principal -->
+                <div id="heroSection" class="mb-16 animate-fade-in">
+                    <!-- Se genera dinámicamente -->
                 </div>
-                <div class="floating-tools text-2xl" style="animation-delay: 1s;">⚙️</div>
+
+                <!-- Por qué elegirnos -->
+                <div id="whyChooseSection" class="mb-16 animate-slide-in" style="animation-delay: 0.2s">
+                    <!-- Se genera dinámicamente -->
+                </div>
+
+                <!-- Nuestras Especialidades -->
+                <div id="specialtiesSection" class="mb-16 animate-fade-in" style="animation-delay: 0.4s">
+                    <!-- Se genera dinámicamente -->
+                </div>
+
+                <!-- Call to Action -->
+                <div id="ctaSection" class="animate-fade-in" style="animation-delay: 0.6s">
+                    <!-- Se genera dinámicamente -->
+                </div>
             </div>
-        </div>
+        </section>
     </div>
 
-    <!-- Overlay de construcción elegante -->
-    <div class="fixed inset-0 z-40 bg-black bg-opacity-20 backdrop-blur-sm"></div>
-    
-    <!-- Modal de construcción central -->
-    <div class="fixed inset-0 z-50 flex items-center justify-center p-4">
-        <div class="construction-banner bg-white rounded-3xl shadow-2xl border-4 border-orange-200 max-w-2xl w-full mx-auto overflow-hidden">
-            <!-- Header del modal -->
-            <div class="bg-gradient-to-r from-orange-500 to-amber-500 px-8 py-6 text-white text-center">
-                <div class="text-6xl mb-4 floating-tools">🏗️</div>
-                <h1 class="text-3xl font-bold mb-2">Sitio en Construcción</h1>
-                <p class="text-orange-100">Pronto tendremos algo increíble para mostrarle</p>
-            </div>
-            
-            <!-- Contenido del modal -->
-            <div class="px-8 py-8 text-center">
-                <div class="mb-6">
-                    <h2 class="text-2xl font-bold text-slate-800 mb-4">
-                        Consultorio <span class="bg-gradient-to-r from-emerald-600 to-sky-600 bg-clip-text text-transparent">CADIM</span>
-                    </h2>
-                    <p class="text-lg text-slate-600 mb-6">
-                        Estamos trabajando para ofrecerle una experiencia digital excepcional
-                    </p>
-                </div>
-                
-                <!-- Barra de progreso -->
-                <div class="mb-8">
-                    <div class="flex justify-between text-sm text-slate-600 mb-2">
-                        <span>Progreso</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="w-full bg-slate-200 rounded-full h-3">
-                        <div class="bg-gradient-to-r from-orange-500 to-amber-500 h-3 rounded-full transition-all duration-1000" style="width: 85%"></div>
-                    </div>
-                </div>
-                
-                <!-- Información de contacto -->
-                <div class="bg-slate-50 rounded-2xl p-6 mb-6">
-                    <h3 class="font-semibold text-slate-800 mb-4">Mientras tanto, puede contactarnos:</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                        <div class="flex items-center justify-center gap-2 text-slate-600">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21L6.16 10.928c-.59.295-.96.99-.96 1.764v.025c0 2.372 2.828 4.292 6.314 4.292 3.486 0 6.314-1.92 6.314-4.292v-.025c0-.773-.37-1.469-.96-1.764l-4.064-2.541a1 1 0 01-.502-1.21L13.8 2.684A1 1 0 0114.72 2H18a2 2 0 012 2v1a17.941 17.941 0 01-17.999 17.999A2 2 0 013 20V5z"></path>
-                            </svg>
-                            <span>(612) 202 - 0735</span>
-                        </div>
-                        <div class="flex items-center justify-center gap-2 text-slate-600">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                            <span>Lun-Vie: 8:00-18:00</span>
-                        </div>
-                        <div class="flex items-center justify-center gap-2 text-slate-600">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            </svg>
-                            <span>La Paz, BCS</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Botón de contacto -->
-                <a href="https://wa.me/526122020735?text=Hola,%20vi%20su%20trabajo%20en%20CADIM%20y%20me%20interesa%20una%20p%C3%A1gina%20web" 
-                   target="_blank"
-                   class="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    <!-- Página del Directorio (sin cambios) -->
+    <div id="directoryPage" class="page-hidden min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
+        <div class="w-full max-w-5xl mx-auto">
+            <!-- Header del Directorio -->
+            <header class="text-center mb-8 md:mb-12">
+                <button onclick="AppNavigation.showWelcome()" class="mb-6 text-slate-600 hover:text-slate-800 flex items-center gap-2 mx-auto transition-colors duration-200">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                     </svg>
-                    Contactar por WhatsApp
-                </a>
-                
-                <!-- Estimación de tiempo -->
-                <p class="text-sm text-slate-500 mt-6">
-                    ⏰ ¡Estimamos tener el sitio completo <span class="font-semibold text-orange-600"> muy pronto!</span>
-                </p>
-            </div>
+                    Volver al inicio
+                </button>
+                <h1 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">Nuestros Especialistas</h1>
+                <p class="text-lg text-slate-600 mb-2">Seleccione un doctor para conocer más detalles</p>
+                <p class="text-base text-slate-500 max-w-2xl mx-auto">Profesionales comprometidos con su salud y bienestar</p>
+            </header>
+
+            <!-- Navigation Tabs -->
+            <nav class="flex flex-col sm:flex-row justify-center items-center bg-white p-2 rounded-2xl shadow-lg border border-slate-200/50 mb-8 md:mb-12 gap-2 sm:gap-0" id="doctorTabs">
+                <!-- Los tabs se generan dinámicamente -->
+            </nav>
+
+            <!-- Doctor Profile Card -->
+            <main class="rounded-2xl shadow-xl border-2 overflow-hidden animate-fade-in" id="doctorProfile">
+                <!-- El contenido se genera dinámicamente -->
+            </main>
         </div>
     </div>
-
-    <!-- Contenido original del sitio (con blur) -->
-    <div class="blur-content">
-        <!-- Página de Bienvenida -->
-        <div id="welcomePage" class="min-h-screen">
-            <!-- Hero Section -->
-            <section class="hero-bg min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
-                <div class="w-full max-w-6xl mx-auto text-center">
-                    <!-- Header Principal -->
-                    <div id="heroSection" class="mb-16 animate-fade-in">
-                        <!-- Se genera dinámicamente -->
-                    </div>
-
-                    <!-- Por qué elegirnos -->
-                    <div id="whyChooseSection" class="mb-16 animate-slide-in" style="animation-delay: 0.2s">
-                        <!-- Se genera dinámicamente -->
-                    </div>
-
-                    <!-- Nuestras Especialidades -->
-                    <div id="specialtiesSection" class="mb-16 animate-fade-in" style="animation-delay: 0.4s">
-                        <!-- Se genera dinámicamente -->
-                    </div>
-
-                    <!-- Call to Action -->
-                    <div id="ctaSection" class="animate-fade-in" style="animation-delay: 0.6s">
-                        <!-- Se genera dinámicamente -->
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- Página del Directorio (sin cambios) -->
-        <div id="directoryPage" class="page-hidden min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
-            <div class="w-full max-w-5xl mx-auto">
-                <!-- Header del Directorio -->
-                <header class="text-center mb-8 md:mb-12">
-                    <button onclick="AppNavigation.showWelcome()" class="mb-6 text-slate-600 hover:text-slate-800 flex items-center gap-2 mx-auto transition-colors duration-200">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                        </svg>
-                        Volver al inicio
-                    </button>
-                    <h1 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">Nuestros Especialistas</h1>
-                    <p class="text-lg text-slate-600 mb-2">Seleccione un doctor para conocer más detalles</p>
-                    <p class="text-base text-slate-500 max-w-2xl mx-auto">Profesionales comprometidos con su salud y bienestar</p>
-                </header>
-
-                <!-- Navigation Tabs -->
-                <nav class="flex flex-col sm:flex-row justify-center items-center bg-white p-2 rounded-2xl shadow-lg border border-slate-200/50 mb-8 md:mb-12 gap-2 sm:gap-0" id="doctorTabs">
-                    <!-- Los tabs se generan dinámicamente -->
-                </nav>
-
-                <!-- Doctor Profile Card -->
-                <main class="rounded-2xl shadow-xl border-2 overflow-hidden animate-fade-in" id="doctorProfile">
-                    <!-- El contenido se genera dinámicamente -->
-                </main>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer profesional -->
-    <footer class="fixed bottom-0 left-0 right-0 z-30 bg-slate-50 border-t border-slate-200 py-3">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center text-sm">
-                <span class="text-slate-500">Sitio desarrollado por</span>
-                <a href="https://wa.me/526122020735?text=Hola,%20vi%20su%20trabajo%20en%20CADIM%20y%20me%20interesa%20una%20p%C3%A1gina%20web" 
-                   class="ml-1 text-blue-600 font-semibold hover:underline transition-colors">
-                    Artes Gráficas La Paz
-                </a>
-            </div>
-        </div>
-    </footer>
 
     <!-- Cargar módulos JavaScript en orden -->
     <script src="js/data/doctors.js"></script>
