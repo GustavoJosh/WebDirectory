@@ -12,9 +12,14 @@ const doctorsData = [
             'Ultrasonidos ginecológicos y obstétricos'
         ],
         hospital: {
-            name: 'Clínica Corazón Sano',
-            address: 'Av. Siempre Viva 123, Consultorio 101, Ciudad Esperanza',
+            name: 'CADIM - La Paz',
+            address: 'Ignacio Allende 2135, Los Olivos, 23040 La Paz, B.C.S.',
             locationUrl: 'https://maps.google.com/?q=Clínica+Corazón+Sano,+Av.+Siempre+Viva+123,+Ciudad+Esperanza'
+        },
+        // ✨ NUEVO: Información de WhatsApp
+        whatsapp: {
+            number: '6241234567', // Número sin espacios ni símbolos
+            message: 'Hola Dr. Pérez, me gustaría agendar una consulta de ginecología. ¿Cuál sería su disponibilidad?'
         },
         color: 'emerald',
         icon: '❤️'
@@ -32,9 +37,14 @@ const doctorsData = [
             'Coordinación con otras especialidades para un abordaje completo'
         ],
         hospital: {
-            name: 'Clínica Salud Integral',
-            address: 'Avenida Progreso 789, Consultorio 303, Ciudad Esperanza',
+            name: 'CADIM - La Paz',
+            address: 'Ignacio Allende 2135, Los Olivos, 23040 La Paz, B.C.S.',
             locationUrl: 'https://maps.google.com/?q=Clínica+Salud+Integral,+Avenida+Progreso+789,+Ciudad+Esperanza'
+        },
+        // ✨ NUEVO: Información de WhatsApp
+        whatsapp: {
+            number: '6241234568',
+            message: 'Hola Dr. Aguilar, necesito una consulta de medicina interna. ¿Podría agendar una cita?'
         },
         color: 'sky',
         icon: '🩺'
@@ -52,9 +62,14 @@ const doctorsData = [
             'Ecografías ginecológicas y obstétricas'
         ],
         hospital: {
-            name: 'Centro Médico Vida Plena',
-            address: 'Calle Bienestar 456, Consultorio 205, Ciudad Esperanza',
+            name: 'CADIM - La Paz',
+            address: 'Ignacio Allende 2135, Los Olivos, 23040 La Paz, B.C.S.',
             locationUrl: 'https://maps.google.com/?q=Centro+Médico+Vida+Plena,+Calle+Bienestar+456,+Ciudad+Esperanza'
+        },
+        // ✨ NUEVO: Información de WhatsApp
+        whatsapp: {
+            number: '6241234569',
+            message: 'Hola Dra. Savin, me gustaría solicitar una consulta ginecológica. ¿Cuáles son sus horarios disponibles?'
         },
         color: 'pink',
         icon: '👶'
@@ -74,9 +89,14 @@ const doctorsData = [
             'Planificación familiar y anticoncepción'
         ],
         hospital: {
-            name: 'Hospital Materno Infantil San Rafael',
-            address: 'Av. Universidad 789, Torre Médica, Piso 3, Consultorio 304, Ciudad de México',
+            name: 'CADIM - La Paz',
+            address: 'Ignacio Allende 2135, Los Olivos, 23040 La Paz, B.C.S.',
             locationUrl: 'https://maps.google.com/?q=Hospital+Materno+Infantil+San+Rafael,+Av.+Universidad+789,+Ciudad+de+México'
+        },
+        // ✨ NUEVO: Información de WhatsApp
+        whatsapp: {
+            number: '6241234570',
+            message: 'Hola Dr. Castro, me interesa agendar una consulta de ginecología y obstetricia. ¿Cuándo tendría disponibilidad?'
         },
         color: 'blue',
         icon: '🏥'
