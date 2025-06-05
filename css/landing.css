@@ -48,7 +48,7 @@
 /* Agrega esto a tu landing.css */
 
 /* Hacer circulares todas las tarjetas de especialidades */
-#specialtiesSection .welcome-card {
+/* #specialtiesSection .welcome-card {
     border-radius: 50% !important;
     aspect-ratio: 1 !important;
     min-height: 280px !important;
@@ -58,46 +58,46 @@
     align-items: center !important;
     text-align: center !important;
     padding: 2rem !important;
-}
+} */
 
 /* Mejorar el hover para círculos */
-#specialtiesSection .welcome-card:hover {
+/* #specialtiesSection .welcome-card:hover {
     transform: translateY(-8px) scale(1.02) !important;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
-}
+} */
 
 /* Ajustar texto dentro de los círculos */
-#specialtiesSection .welcome-card h3 {
+/* #specialtiesSection .welcome-card h3 {
     margin-bottom: 1rem !important;
     line-height: 1.2 !important;
     font-size: 1.1rem !important;
-}
+} */
 
-#specialtiesSection .welcome-card p {
+/* #specialtiesSection .welcome-card p {
     font-size: 0.8rem !important;
     line-height: 1.3 !important;
     max-width: 85% !important;
     margin: 0 auto !important;
-}
+} */
 
 /* Iconos centrados */
-#specialtiesSection .welcome-card > div:first-child {
+/* #specialtiesSection .welcome-card > div:first-child {
     margin-bottom: 1rem !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-}
+} */
 
 /* Grid mejorado para círculos */
-#specialtiesSection .grid {
+/* #specialtiesSection .grid {
     display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; /* ← Volver a 280px */
-    gap: 1.5rem !important; /* ← Reducir el gap */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; 
+    gap: 1.5rem !important; 
     max-width: 1000px !important;
     margin: 0 auto !important;
-}
+} */
 /* Responsive para móviles */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     #specialtiesSection .welcome-card {
         min-height: 240px !important;
         padding: 1.5rem !important;
@@ -111,7 +111,7 @@
         font-size: 0.75rem !important;
         max-width: 90% !important;
     }
-}
+} */
 
 /* Si aún no funciona, prueba esto más específico */
 /* div[id="specialtiesSection"] div.welcome-card {

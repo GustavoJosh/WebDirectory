@@ -14,12 +14,12 @@ const doctorsData = [
         hospital: {
             name: 'CADIM - La Paz',
             address: 'Ignacio Allende 2135, Los Olivos, 23040 La Paz, B.C.S.',
-            locationUrl: 'https://maps.google.com/?q=Clínica+Corazón+Sano,+Av.+Siempre+Viva+123,+Ciudad+Esperanza'
+            locationUrl: 'https://g.co/kgs/xyJMzwH'
         },
         // ✨ NUEVO: Información de WhatsApp
         whatsapp: {
-            number: '6241234567', // Número sin espacios ni símbolos
-            message: 'Hola Dr. Pérez, me gustaría agendar una consulta de ginecología. ¿Cuál sería su disponibilidad?'
+            number: '6122311713', // Número sin espacios ni símbolos
+            message: 'Hola Dr. Pérez, me gustaría agendar una consulta. ¿Cuál sería su disponibilidad?'
         },
         color: 'emerald',
         icon: '❤️'
@@ -43,7 +43,7 @@ const doctorsData = [
         },
         // ✨ NUEVO: Información de WhatsApp
         whatsapp: {
-            number: '6241234568',
+            number: '6122311713',
             message: 'Hola Dr. Aguilar, necesito una consulta de medicina interna. ¿Podría agendar una cita?'
         },
         color: 'sky',
@@ -68,8 +68,8 @@ const doctorsData = [
         },
         // ✨ NUEVO: Información de WhatsApp
         whatsapp: {
-            number: '6241234569',
-            message: 'Hola Dra. Savin, me gustaría solicitar una consulta ginecológica. ¿Cuáles son sus horarios disponibles?'
+            number: '66122311713',
+            message: 'Hola Dra. Savin, me gustaría solicitar una consulta. ¿Cuáles son sus horarios disponibles?'
         },
         color: 'pink',
         icon: '👶'
@@ -95,8 +95,8 @@ const doctorsData = [
         },
         // ✨ NUEVO: Información de WhatsApp
         whatsapp: {
-            number: '6241234570',
-            message: 'Hola Dr. Castro, me interesa agendar una consulta de ginecología y obstetricia. ¿Cuándo tendría disponibilidad?'
+            number: '6122311713',
+            message: 'Hola Dr. Castro, me interesa agendar una consulta. ¿Cuándo tendría disponibilidad?'
         },
         color: 'blue',
         icon: '🏥'
