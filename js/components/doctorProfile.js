@@ -52,15 +52,15 @@ class DoctorProfile {
         return `
             <div class="lg:col-span-2 p-8 flex flex-col bg-white">
                 <div class="mb-8">
-                    <h3 class="text-xl font-semibold text-slate-700 mb-4">Sobre mí y mis servicios</h3>
-                    <p class="text-slate-600 leading-relaxed mb-6">${doctor.bio}</p>
+                    <h3 class="text-xl font-semibold text-slate-700 mb-4 text-center">Sobre mí y mis servicios</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6 text-justify">${doctor.bio}</p>
                     
-                    <h4 class="text-lg font-semibold text-slate-700 mb-3">Servicios que ofrezco:</h4>
+                    <h4 class="text-lg font-semibold text-slate-700 mb-3 text-center">Servicios que ofrezco:</h4>
                     <ul class="space-y-2 text-slate-600">
                         ${servicesHTML}
                     </ul>
                 </div>
-
+    
                 ${this.generateHospitalInfo(doctor, colorClasses)}
             </div>
         `;

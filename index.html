@@ -3,46 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultorio CADIM - Acompañamiento en Maternidad</title>
+    <title>Consultorio CADIM - Centro de Atención y Diagnóstico Integral</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.js"></script>
     
-    <!-- Cargar estilos modulares -->
+    <!-- ===================================
+         ESTILOS CSS MODULARES 
+         =================================== -->
+    
+    <!-- Variables CSS globales (se cargan primero) -->
+    <link rel="stylesheet" href="css/variables.css">
+    
+    <!-- Estilos base existentes -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/landing.css">
     <link rel="stylesheet" href="css/specialty-cards.css">
+    
+    <!-- Nuevos estilos modulares del hero -->
+    <link rel="stylesheet" href="css/hero-section.css">
+    <link rel="stylesheet" href="css/hero-typography.css">
+    <link rel="stylesheet" href="css/hero-components.css">
+    <link rel="stylesheet" href="css/floating-gallery.css">
+    <link rel="stylesheet" href="css/particle-effects.css">
 
 </head>
-<body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen" style="font-family: 'Nunito Sans', sans-serif;">
-    <!-- Reemplazar la sección actual de welcomePage con esto: -->
-<div id="welcomePage" class="min-h-screen">
-    <!-- Hero Section -->
-    <section id="heroSection" class="hero-bg min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
-        <!-- Elementos decorativos flotantes -->
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute top-20 right-20 w-72 h-72 bg-emerald-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float"></div>
-            <div class="absolute bottom-20 left-20 w-96 h-96 bg-cyan-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float" style="animation-delay: 2s;"></div>
-        </div>
+<body style="font-family: 'Nunito Sans', sans-serif;">
+    <!-- ===================================
+         PÁGINA DE BIENVENIDA
+         =================================== -->
+    <div id="welcomePage" class="min-h-screen">
+        <!-- Hero Section Modernizado -->
+        <section id="heroSection" class="hero-section">
+            <!-- Background con imagen y overlay -->
+            <div class="background-wrapper">
+                <div class="background-image"></div>
+                <div class="overlay"></div>
+                
+                <!-- Sistema de partículas flotantes -->
+                <div class="particles">
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                </div>
+            </div>
+            
+            <!-- Contenido principal del hero -->
+            <div class="content-container">
+                <!-- Contenido textual (izquierda) -->
+                <div class="content-left">
+                    <div class="emoji-header">👶❤️👩‍⚕️</div>
+                    
+                    <h1 class="hero-title">Consultorio CADIM</h1>
+                    
+                    <p class="hero-subtitle">
+                        Centro de Atención y Diagnóstico Integral con <span class="highlight">Medicina Interna</span>
+                    </p>
+                    
+                    <p class="hero-tagline">Acompañándote en cada etapa de la maternidad</p>
+                    
+                    <p class="hero-description">
+                        Especialistas dedicados al cuidado integral de la mujer, desde la fertilidad hasta la menopausia,
+                        brindando atención personalizada con la tecnología más avanzada y el toque humano que
+                        necesitas.
+                    </p>
+                    
+                    <!-- Estadísticas -->
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <div class="stat-number">+500</div>
+                            <div class="stat-label">Familias acompañadas</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Años de experiencia</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Satisfacción pacientes</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Botones CTA -->
+                    <div class="buttons-container">
+                        <button onclick="window.AppNavigation.showDirectory()" class="hero-btn hero-btn-primary">
+                            Conoce a Nuestros Especialistas
+                        </button>
+                        <button onclick="window.WelcomePage.showAboutView()" class="hero-btn hero-btn-secondary">
+                            Más Sobre Nosotros
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Galería flotante (derecha) -->
+                <div class="content-right">
+                    <div class="floating-gallery">
+                        <div class="gallery-item gallery-item-1">
+                            <img src="assets/doctores.png" alt="Equipo médico" loading="lazy">
+                        </div>
+                        <div class="gallery-item gallery-item-2">
+                            <img src="assets/embarazo.png" alt="Cuidado del embarazo" loading="lazy">
+                        </div>
+                        <div class="gallery-item gallery-item-3">
+                            <img src="assets/menopausia.png" alt="Salud integral de la mujer" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         
-        <div class="relative z-10 w-full max-w-6xl mx-auto text-center">
-            <div id="heroContent" class="animate-fade-in">
-                <!-- El contenido se genera dinámicamente -->
-            </div>
-        </div>
-    </section>
-    
-    <!-- About Section (oculta por defecto) -->
-    <section id="aboutSection" class="hidden">
-        <!-- El contenido se genera dinámicamente -->
-    </section>
-</div>
-            </div>
+        <!-- About Section (generada dinámicamente) -->
+        <section id="aboutSection" class="hidden">
+            <!-- El contenido se genera dinámicamente por JavaScript -->
         </section>
     </div>
 
-    <!-- Página del Directorio (sin cambios) -->
+    <!-- ===================================
+         PÁGINA DEL DIRECTORIO
+         =================================== -->
     <div id="directoryPage" class="page-hidden min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
         <div class="w-full max-w-5xl mx-auto">
             <!-- Header del Directorio -->
@@ -69,17 +150,21 @@
             </main>
         </div>
     </div>
-    <!-- Footer -->
-        <footer>
-    <div class="footer-links">
-        <a href="aviso-privacidad.html">Aviso de Privacidad</a> | 
-        <a href="#contacto">Contacto</a>
-        <a>&copy; 2025 Consultorio CADIM La Paz</a>
-    </div>
-        
-    </footer>
 
-    <!-- Cargar módulos JavaScript en orden -->
+    <!-- ===================================
+         FOOTER
+         =================================== -->
+    <footer>
+        <div class="footer-links">
+            <a href="aviso-privacidad.html">Aviso de Privacidad</a> | 
+            <a href="#contacto">Contacto</a>
+            <a>&copy; 2025 Consultorio CADIM La Paz</a>
+        </div>
+    </footer>
+s
+    <!-- ===================================
+         SCRIPTS JAVASCRIPT MODULARES
+         =================================== -->
     <script src="js/data/doctors.js"></script>
     <script src="js/data/landingContent.js"></script>
     <script src="js/utils/colorUtils.js"></script>

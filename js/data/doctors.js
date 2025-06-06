@@ -2,7 +2,7 @@ const doctorsData = [
     {
         id: 1,
         name: 'Dr. Javier Hector Pérez Carcaño',
-        specialty: 'Ginecología y obstetricia, fertilidad, climaterio y menopausia',
+        specialty: 'Ginecología y obstetricia - laparoscopía - Fertilidad, climaterio y menopausia .', 
         bio: 'Con más de 20 años de experiencia en salud femenina, me especializo en ginecología y obstetricia, ofreciendo atención integral en todas las etapas de la vida de la mujer. Brindo acompañamiento profesional y humano en procesos de fertilidad, climaterio y menopausia, con tratamientos personalizados y basados en evidencia médica.',
         services: [
             'Controles ginecológicos y obstétricos',

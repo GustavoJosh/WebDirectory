@@ -1,0 +1,106 @@
+/* css/variables.css */
+
+/* =================================
+   VARIABLES CSS GLOBALES
+   ================================= */
+
+   :root {
+    /* Colores principales del hero */
+    --hero-primary-green: rgba(26, 95, 74, 1);
+    --hero-overlay-start: rgba(26, 95, 74, 0.92);
+    --hero-overlay-mid: rgba(26, 95, 74, 0.6);
+    --hero-overlay-end: rgba(26, 95, 74, 0.1);
+    --hero-highlight-pink: #ffcdd2;
+    
+    /* Colores de texto */
+    --hero-text-primary: white;
+    --hero-text-secondary: rgba(255, 255, 255, 0.95);
+    --hero-text-tertiary: rgba(255, 255, 255, 0.9);
+    
+    /* Efectos glassmorphism */
+    --glass-bg-light: rgba(255, 255, 255, 0.15);
+    --glass-bg-hover: rgba(255, 255, 255, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-border-hover: rgba(255, 255, 255, 0.5);
+    
+    /* Sombras */
+    --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.2);
+    --shadow-medium: 0 6px 25px rgba(0, 0, 0, 0.3);
+    --shadow-gallery: 0 10px 30px rgba(0, 0, 0, 0.2);
+    --shadow-gallery-hover: 0 15px 40px rgba(0, 0, 0, 0.3);
+    
+    /* Text shadows */
+    --text-shadow-primary: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    --text-shadow-secondary: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    --text-shadow-subtle: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    
+    /* Transiciones */
+    --transition-standard: all 0.3s ease;
+    --transition-slow: all 0.5s ease-in-out;
+    
+    /* Espaciado */
+    --hero-container-gap: 60px;
+    --stats-gap: 30px;
+    --buttons-gap: 20px;
+    
+    /* Tamaños de fuente responsive */
+    --hero-title-desktop: 52px;
+    --hero-title-tablet: 42px;
+    --hero-title-mobile: 36px;
+    
+    --hero-tagline-desktop: 26px;
+    --hero-tagline-mobile: 22px;
+    
+    /* Z-index layers */
+    --z-particles: 1;
+    --z-content: 2;
+    --z-gallery-hover: 10;
+}
+
+/* =================================
+   UTILIDADES DE BACKDROP FILTER
+   ================================= */
+
+.backdrop-blur-glass {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* =================================
+   CLASES DE ANIMACIÓN REUTILIZABLES
+   ================================= */
+
+.animate-float-delayed-2s {
+    animation: float 6s ease-in-out infinite 2s;
+}
+
+.animate-float-delayed-4s {
+    animation: float 6s ease-in-out infinite 4s;
+}
+
+/* =================================
+   MIXINS COMO CLASES UTILITY
+   ================================= */
+
+.text-shadow-primary {
+    text-shadow: var(--text-shadow-primary);
+}
+
+.text-shadow-secondary {
+    text-shadow: var(--text-shadow-secondary);
+}
+
+.text-shadow-subtle {
+    text-shadow: var(--text-shadow-subtle);
+}
+
+.glass-effect {
+    background: var(--glass-bg-light);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.glass-effect:hover {
+    background: var(--glass-bg-hover);
+}

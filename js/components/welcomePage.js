@@ -9,44 +9,46 @@ class WelcomePage {
     }
 
     static generateHeroSection() {
-        const container = document.getElementById('heroSection');
+        const container = document.getElementById('heroContent');
         if (!container) return;
-
+    
         const { hero } = window.LandingContent;
         const heroIcon = window.IconManager.getIcon(hero.icons, '6xl');
-
+    
         container.innerHTML = `
-            <div class="${heroIcon.includes('text-6xl') ? 'text-6xl' : ''} mb-8 animate-float">${heroIcon}</div>
-            <h1 class="text-5xl md:text-7xl font-bold text-slate-800 mb-6">
-                ${hero.title}
-            </h1>
-            <p class="text-2xl md:text-3xl text-slate-700 mb-6 font-medium">
-                ${hero.subtitle}
-            </p>
-            <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
-                ${hero.description}
-            </p>
-            
-            <!-- Estadísticas -->
-            <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-12 animate-pulse-soft">
-                ${hero.stats.map(stat => `
-                    <div class="text-center stat-item">
-                        <div class="text-4xl font-bold text-${stat.color}-600">${stat.number}</div>
-                        <div class="text-slate-600">${stat.label}</div>
-                    </div>
-                `).join('')}
-            </div>
-            
-            <!-- Botones CTA -->
-            <div class="flex flex-col sm:flex-row gap-4">
-                <button onclick="window.AppNavigation.showDirectory()" 
-                    class="bg-gradient-to-r from-emerald-600 to-sky-600 text-white px-10 py-4 rounded-full text-lg font-semibold hover:from-emerald-700 hover:to-sky-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
-                    Conoce a Nuestros Especialistas
-                </button>
-                <button onclick="window.WelcomePage.showAboutView()" 
-                    class="bg-white text-slate-800 border-2 border-slate-300 px-10 py-4 rounded-full text-lg font-semibold hover:bg-slate-50 hover:border-slate-400 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
-                    Más Sobre Nosotros
-                </button>
+            <div class="text-center">
+                <div class="${heroIcon.includes('text-6xl') ? 'text-6xl' : ''} mb-8 animate-float">${heroIcon}</div>
+                <h1 class="text-5xl md:text-7xl font-bold text-slate-800 mb-6">
+                    ${hero.title}
+                </h1>
+                <p class="text-2xl md:text-3xl text-slate-700 mb-6 font-medium">
+                    ${hero.subtitle}
+                </p>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8 text-justify">
+                    ${hero.description}
+                </p>
+                
+                <!-- Estadísticas -->
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-12 animate-pulse-soft">
+                    ${hero.stats.map(stat => `
+                        <div class="text-center stat-item">
+                            <div class="text-4xl font-bold text-${stat.color}-600">${stat.number}</div>
+                            <div class="text-slate-600">${stat.label}</div>
+                        </div>
+                    `).join('')}
+                </div>
+                
+                <!-- Botones CTA -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="window.AppNavigation.showDirectory()" 
+                        class="bg-gradient-to-r from-emerald-600 to-sky-600 text-white px-10 py-4 rounded-full text-lg font-semibold hover:from-emerald-700 hover:to-sky-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                        Conoce a Nuestros Especialistas
+                    </button>
+                    <button onclick="window.WelcomePage.showAboutView()" 
+                        class="bg-white text-slate-800 border-2 border-slate-300 px-10 py-4 rounded-full text-lg font-semibold hover:bg-slate-50 hover:border-slate-400 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                        Más Sobre Nosotros
+                    </button>
+                </div>
             </div>
         `;
     }
@@ -127,11 +129,11 @@ class WelcomePage {
                         
                         return `
                             <div class="specialty-card bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border-2 border-${color}-100 hover:border-${color}-300">
-                                <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-${color}-100 to-${color}-200 rounded-full mb-6 icon-bounce" style="animation-delay: ${service.delay}">
+                                <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-${color}-100 to-${color}-200 rounded-full mb-6 icon-bounce mx-auto" style="animation-delay: ${service.delay}">
                                     ${icon}
                                 </div>
-                                <h3 class="text-xl font-bold text-slate-800 mb-4">${service.title}</h3>
-                                <p class="text-slate-600 leading-relaxed">
+                                <h3 class="text-xl font-bold text-slate-800 mb-4 text-center">${service.title}</h3>
+                                <p class="text-slate-600 leading-relaxed text-justify">
                                     ${service.description}
                                 </p>
                             </div>
