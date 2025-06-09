@@ -119,3 +119,13 @@
     aspect-ratio: 1 !important;
     min-height: 280px !important;
 } */
+
+.why-choose-section {
+    background: linear-gradient(135deg, 
+        rgba(236, 253, 245, 0.7) 0%,   /* Verde muy suave */
+        rgba(240, 249, 255, 0.8) 50%,  /* Azul muy suave */
+        rgba(253, 244, 255, 0.7) 100%  /* Rosa muy suave */
+    );
+    padding: 4rem 2rem;
+    border-radius: 1rem;
+}

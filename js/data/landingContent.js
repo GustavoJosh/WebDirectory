@@ -32,25 +32,38 @@ const landingContent = {
         title: '¿Por qué elegir CADIM?',
         features: [
             {
-                icon: { emoji: '🩺', logo: 'assets/icons/stethoscope.svg' },
+                // Estructura nueva con imagen + fallbacks
+                image: 'team-specialists.jpg',    // Imagen principal
+                icon: 'stethoscope.svg',         // Fallback 1
+                emoji: '🩺',                     // Fallback 2
+                alt: 'Equipo médico especializado',
                 title: 'Equipo Especializado',
                 description: 'Profesionales con amplia experiencia en salud femenina y maternidad',
                 color: 'emerald'
             },
             {
-                icon: { emoji: '🤝', logo: 'assets/icons/handshake.svg' },
+                image: 'personalized-care.jpg',
+                icon: 'handshake.svg',
+                emoji: '🤝',
+                alt: 'Atención personalizada',
                 title: 'Atención Personalizada', 
                 description: 'Cada paciente recibe un plan de cuidado único y adaptado a sus necesidades',
                 color: 'sky'
             },
             {
-                icon: { emoji: '🔬', logo: 'assets/icons/microscope.svg' },
+                image: 'advanced-technology.jpg',
+                icon: 'microscope.svg',
+                emoji: '🔬',
+                alt: 'Tecnología médica avanzada',
                 title: 'Tecnología Avanzada',
                 description: 'Equipos de última generación para diagnósticos precisos y seguimiento óptimo',
                 color: 'pink'
             },
             {
-                icon: { emoji: '💖', logo: 'assets/icons/heart-care.svg' },
+                image: 'integral-care.jpg',
+                icon: 'heart-care.svg',
+                emoji: '💖',
+                alt: 'Acompañamiento integral',
                 title: 'Acompañamiento Integral',
                 description: 'Te acompañamos en cada paso con calidez humana y profesionalismo',
                 color: 'purple'
@@ -62,45 +75,63 @@ const landingContent = {
         title: 'Nuestras Especialidades',
         services: [
             {
-                icon: { emoji: '🤰', logo: 'assets/icons/pregnancy.svg' },
+                image: 'prenatal-control.jpg',
+                icon: 'pregnancy.svg',
+                emoji: '🤰',
+                alt: 'Control prenatal',
                 title: 'Control Prenatal',
                 description: 'Seguimiento completo durante el embarazo con ultrasonidos de alta definición y monitoreo constante para garantizar la salud de mamá y bebé.',
-                color: 'pink', // 🩷 MATERNIDAD - Rosa para calidez maternal
+                color: 'pink',
                 delay: '0.5s'
             },
             {
-                icon: { emoji: '💕', logo: 'assets/icons/fertility.svg' },
+                image: 'fertility-treatment.jpg',
+                icon: 'fertility.svg',
+                emoji: '💕',
+                alt: 'Tratamiento de fertilidad',
                 title: 'Fertilidad',
                 description: 'Evaluación y tratamiento de problemas de fertilidad con técnicas modernas y un enfoque integral para cumplir tu sueño de ser madre.',
-                color: 'pink', // 🩷 SUEÑOS DE SER MADRE - Rosa para esperanza maternal
+                color: 'pink',
                 delay: '0.7s'
             },
             {
-                icon: { emoji: '🌸', logo: 'assets/icons/menopause.svg' },
+                image: 'menopause-care.jpg',
+                icon: 'menopause.svg',
+                emoji: '🌸',
+                alt: 'Cuidado en la menopausia',
                 title: 'Climaterio y Menopausia',
                 description: 'Acompañamiento especializado durante esta etapa de cambios, con tratamientos personalizados para mantener tu calidad de vida.',
-                color: 'pink', // 🩷 ETAPAS FEMENINAS - Rosa para sensibilidad femenina
+                color: 'pink',
                 delay: '0.9s'
             },
             {
-                icon: { emoji: '🏥', logo: 'assets/icons/internal-medicine.svg' },
+                image: 'internal-medicine.jpg',
+                icon: 'internal-medicine.svg',
+                emoji: '🏥',
+                alt: 'Medicina interna',
                 title: 'Medicina Interna',
                 description: 'Atención integral para enfermedades crónicas y agudas, coordinando con otras especialidades para un cuidado completo.',
-                color: 'sky', // 🔵 SALUD GENERAL - Azul para profesionalismo médico
+                color: 'sky',
                 delay: '1.1s'
             },
             {
-                icon: { emoji: '👨‍⚕️', logo: 'assets/icons/gynecology.svg' },
+                image: 'gynecology-general.jpg',
+                icon: 'gynecology.svg',
+                emoji: '👨‍⚕️',
+                alt: 'Ginecología general',
                 title: 'Ginecología General',
                 description: 'Revisiones ginecológicas, prevención y tratamiento de patologías con la más alta calidad médica y trato humano.',
-                color: 'sky', // 🔵 PROFESIONALISMO MÉDICO - Azul para confianza clínica
+                color: 'sky',
                 delay: '1.3s'
             },
             {
-                icon: { emoji: '📋', logo: 'assets/icons/preventive.svg' },
+                image: 'preventive-health.jpg',
+                icon: 'preventive.svg',
+                emoji: '📋',
+                alt: 'Salud preventiva',
                 title: 'Salud Preventiva',
                 description: 'Programas de prevención y detección temprana para mantener tu salud en óptimas condiciones a lo largo de la vida.',
-                color: 'sky', // 🔵 PREVENCIÓN - Azul para seguridad y protección
+                color: 'sky',
                 delay: '1.5s'
             }
         ]

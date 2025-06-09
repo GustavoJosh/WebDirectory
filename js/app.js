@@ -24,6 +24,8 @@ class App {
             // Inicializar página de bienvenida
             this.initWelcomePage();
 
+            window.ImageManager.initHeroBackgroundLazy();
+
             // Mostrar página de bienvenida por defecto
             window.AppNavigation.showWelcome();
 

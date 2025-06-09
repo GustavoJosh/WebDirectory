@@ -97,12 +97,16 @@ class WelcomePage {
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-12 text-center">${whyChoose.title}</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     ${whyChoose.features.map(feature => {
-                        const icon = window.IconManager.getIcon(feature.icon, 'lg');
+                        // ✨ USAR getCardImage para tarjetas (con imágenes)
+                        const imageElement = window.ImageManager.getCardImage(feature, 'lg');
+                        
                         return `
                             <div class="feature-card bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300">
-                                <div class="mb-4">${icon}</div>
-                                <h3 class="text-lg font-semibold text-slate-800 mb-2">${feature.title}</h3>
-                                <p class="text-sm text-slate-600">${feature.description}</p>
+                                <div class="w-50 h-50 mx-auto mb-4 rounded-lg overflow-hidden aspect-square">
+                                    ${imageElement}
+                                </div>
+                                <h3 class="text-lg font-semibold text-slate-800 mb-2 text-center">${feature.title}</h3>
+                                <p class="text-sm text-slate-600 text-center">${feature.description}</p>
                             </div>
                         `;
                     }).join('')}
@@ -119,18 +123,14 @@ class WelcomePage {
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-12 text-center">${specialties.title}</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     ${specialties.services.map((service, index) => {
-                        const icon = window.IconManager.getIcon(service.icon, 'xl');
-                        const colorMap = {
-                            'pink': 'pink',
-                            'sky': 'sky',
-                            'emerald': 'emerald'
-                        };
-                        const color = colorMap[service.color] || 'slate';
+                        // ✨ USAR getCardImage para tarjetas (con imágenes)
+                        const imageElement = window.ImageManager.getCardImage(service, 'xl');
+                        const color = service.color || 'slate';
                         
                         return `
                             <div class="specialty-card bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border-2 border-${color}-100 hover:border-${color}-300">
-                                <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-${color}-100 to-${color}-200 rounded-full mb-6 icon-bounce mx-auto" style="animation-delay: ${service.delay}">
-                                    ${icon}
+                                <div class="flex items-center justify-center w-32 h-32 bg-gradient-to-br from-${color}-100 to-${color}-200 rounded-full mb-6 icon-bounce mx-auto overflow-hidden" style="animation-delay: ${service.delay}">
+                                    ${imageElement}
                                 </div>
                                 <h3 class="text-xl font-bold text-slate-800 mb-4 text-center">${service.title}</h3>
                                 <p class="text-slate-600 leading-relaxed text-justify">
