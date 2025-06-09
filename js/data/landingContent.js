@@ -1,13 +1,9 @@
+// js/data/landingContent.js - NOMBRES CORREGIDOS
+
 const landingContent = {
     hero: {
         icons: {
-            emoji: '👶❤️🤱',
-            // Para logos futuros:
-            logos: {
-                baby: 'assets/icons/baby-icon.svg',
-                heart: 'assets/icons/heart-icon.svg', 
-                mother: 'assets/icons/mother-icon.svg'
-            }
+            emoji: '👶❤️🤱'
         },
         title: `<div class="text-center">
            Consultorio <span class="bg-gradient-to-r from-emerald-600 to-sky-600 bg-clip-text text-transparent">CADIM</span>
@@ -32,18 +28,16 @@ const landingContent = {
         title: '¿Por qué elegir CADIM?',
         features: [
             {
-                // Estructura nueva con imagen + fallbacks
-                image: 'team-specialists.jpg',    // Imagen principal
-                icon: 'stethoscope.svg',         // Fallback 1
-                emoji: '🩺',                     // Fallback 2
+                // ✅ NOMBRES EXACTOS de tus archivos
+                image: 'team-specialists.jpg',
+                emoji: '🩺',
                 alt: 'Equipo médico especializado',
                 title: 'Equipo Especializado',
                 description: 'Profesionales con amplia experiencia en salud femenina y maternidad',
                 color: 'emerald'
             },
             {
-                image: 'personalized-care.jpg',
-                icon: 'handshake.svg',
+                image: 'personalized-care.jpg',  // ✅ Coincide con tu archivo
                 emoji: '🤝',
                 alt: 'Atención personalizada',
                 title: 'Atención Personalizada', 
@@ -51,8 +45,7 @@ const landingContent = {
                 color: 'sky'
             },
             {
-                image: 'advanced-technology.jpg',
-                icon: 'microscope.svg',
+                image: 'advanced-technology.jpg',  // ✅ Coincide con tu archivo
                 emoji: '🔬',
                 alt: 'Tecnología médica avanzada',
                 title: 'Tecnología Avanzada',
@@ -60,8 +53,7 @@ const landingContent = {
                 color: 'pink'
             },
             {
-                image: 'integral-care.jpg',
-                icon: 'heart-care.svg',
+                image: 'integral-care.jpg',  // ✅ Coincide con tu archivo
                 emoji: '💖',
                 alt: 'Acompañamiento integral',
                 title: 'Acompañamiento Integral',
@@ -75,8 +67,7 @@ const landingContent = {
         title: 'Nuestras Especialidades',
         services: [
             {
-                image: 'prenatal-control.jpg',
-                icon: 'pregnancy.svg',
+                image: 'prenatal-control.jpg',  // ✅ Coincide con tu archivo
                 emoji: '🤰',
                 alt: 'Control prenatal',
                 title: 'Control Prenatal',
@@ -85,8 +76,7 @@ const landingContent = {
                 delay: '0.5s'
             },
             {
-                image: 'fertility-treatment.jpg',
-                icon: 'fertility.svg',
+                image: 'fertility-treatment.jpg',  // ✅ Coincide con tu archivo
                 emoji: '💕',
                 alt: 'Tratamiento de fertilidad',
                 title: 'Fertilidad',
@@ -95,8 +85,7 @@ const landingContent = {
                 delay: '0.7s'
             },
             {
-                image: 'menopause-care.jpg',
-                icon: 'menopause.svg',
+                image: 'menopause-care.jpg',  // ✅ Coincide con tu archivo
                 emoji: '🌸',
                 alt: 'Cuidado en la menopausia',
                 title: 'Climaterio y Menopausia',
@@ -105,8 +94,7 @@ const landingContent = {
                 delay: '0.9s'
             },
             {
-                image: 'internal-medicine.jpg',
-                icon: 'internal-medicine.svg',
+                image: 'internal-medicine.jpg',  // ✅ Coincide con tu archivo
                 emoji: '🏥',
                 alt: 'Medicina interna',
                 title: 'Medicina Interna',
@@ -115,8 +103,7 @@ const landingContent = {
                 delay: '1.1s'
             },
             {
-                image: 'gynecology-general.jpg',
-                icon: 'gynecology.svg',
+                image: 'gynecology-general.jpg',  // ✅ Coincide con tu archivo
                 emoji: '👨‍⚕️',
                 alt: 'Ginecología general',
                 title: 'Ginecología General',
@@ -125,8 +112,7 @@ const landingContent = {
                 delay: '1.3s'
             },
             {
-                image: 'preventive-health.jpg',
-                icon: 'preventive.svg',
+                image: 'preventive-health.jpg',  // ✅ Coincide con tu archivo
                 emoji: '📋',
                 alt: 'Salud preventiva',
                 title: 'Salud Preventiva',
@@ -137,7 +123,6 @@ const landingContent = {
         ]
     },
     
-
     cta: {
         title: '¿Lista para conocer a nuestro equipo?',
         description: 'Descubre a los especialistas que te acompañarán en tu camino hacia la maternidad y el cuidado integral de tu salud femenina.',

@@ -194,7 +194,7 @@ class ImageManager {
         // ✅ Intentar WebP primero, PNG como fallback
         const webpImg = new Image();
         webpImg.onload = () => {
-            element.style.backgroundImage = "url('assets/doctoraybebe.webp')";
+            element.style.backgroundImage = "url('assets/images/doctoraybebe.webp')";
             element.classList.add('background-loaded');
         };
         webpImg.onerror = () => {
@@ -204,9 +204,9 @@ class ImageManager {
                 element.style.backgroundImage = "url('assets/doctoraybebe.png')";
                 element.classList.add('background-loaded');
             };
-            pngImg.src = 'assets/doctoraybebe.png';
+            pngImg.src = 'assets/images/doctoraybebe.png';
         };
-        webpImg.src = 'assets/doctoraybebe.webp';
+        webpImg.src = 'assets/images/doctoraybebe.webp';
     }
 
     // ===================================
