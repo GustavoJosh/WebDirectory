@@ -45,82 +45,12 @@
 }
 
 
-/* Agrega esto a tu landing.css */
 
-/* Hacer circulares todas las tarjetas de especialidades */
-/* #specialtiesSection .welcome-card {
-    border-radius: 50% !important;
-    aspect-ratio: 1 !important;
-    min-height: 280px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-    text-align: center !important;
-    padding: 2rem !important;
-} */
+/* =================================
+   GRADIENTE PARA SECCIÓN WHY CHOOSE
+   ================================= */
 
-/* Mejorar el hover para círculos */
-/* #specialtiesSection .welcome-card:hover {
-    transform: translateY(-8px) scale(1.02) !important;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
-} */
-
-/* Ajustar texto dentro de los círculos */
-/* #specialtiesSection .welcome-card h3 {
-    margin-bottom: 1rem !important;
-    line-height: 1.2 !important;
-    font-size: 1.1rem !important;
-} */
-
-/* #specialtiesSection .welcome-card p {
-    font-size: 0.8rem !important;
-    line-height: 1.3 !important;
-    max-width: 85% !important;
-    margin: 0 auto !important;
-} */
-
-/* Iconos centrados */
-/* #specialtiesSection .welcome-card > div:first-child {
-    margin-bottom: 1rem !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-} */
-
-/* Grid mejorado para círculos */
-/* #specialtiesSection .grid {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; 
-    gap: 1.5rem !important; 
-    max-width: 1000px !important;
-    margin: 0 auto !important;
-} */
-/* Responsive para móviles */
-/* @media (max-width: 768px) {
-    #specialtiesSection .welcome-card {
-        min-height: 240px !important;
-        padding: 1.5rem !important;
-    }
-    
-    #specialtiesSection .welcome-card h3 {
-        font-size: 1rem !important;
-    }
-    
-    #specialtiesSection .welcome-card p {
-        font-size: 0.75rem !important;
-        max-width: 90% !important;
-    }
-} */
-
-/* Si aún no funciona, prueba esto más específico */
-/* div[id="specialtiesSection"] div.welcome-card {
-    border-radius: 50% !important;
-    aspect-ratio: 1 !important;
-    min-height: 280px !important;
-} */
-
-.why-choose-section {
+   .why-choose-section {
     background: linear-gradient(135deg, 
         rgba(236, 253, 245, 0.7) 0%,   /* Verde muy suave */
         rgba(240, 249, 255, 0.8) 50%,  /* Azul muy suave */
@@ -128,4 +58,28 @@
     );
     padding: 4rem 2rem;
     border-radius: 1rem;
+    margin: 2rem 0;
+}
+
+/* Mejorar las tarjetas sobre el gradiente */
+.why-choose-section .feature-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.why-choose-section .feature-card:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .why-choose-section {
+        padding: 2rem 1rem;
+        margin: 1rem 0;
+    }
 }

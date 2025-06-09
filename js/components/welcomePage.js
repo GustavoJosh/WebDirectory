@@ -93,15 +93,16 @@ class WelcomePage {
         const { whyChoose } = window.LandingContent;
         
         return `
-            <div class="mb-20 animate-fade-in">
+            <!-- ✅ AGREGAR LA CLASE why-choose-section -->
+            <div class="mb-20 animate-fade-in why-choose-section">
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-12 text-center">${whyChoose.title}</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     ${whyChoose.features.map(feature => {
-                        // ✨ USAR getCardImage para tarjetas (con imágenes)
                         const imageElement = window.ImageManager.getCardImage(feature, 'lg');
                         
                         return `
-                            <div class="feature-card bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300">
+                            <!-- ✅ QUITAR bg-white/90, ya está en CSS -->
+                            <div class="feature-card backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300">
                                 <div class="w-50 h-50 mx-auto mb-4 rounded-lg overflow-hidden aspect-square">
                                     ${imageElement}
                                 </div>
