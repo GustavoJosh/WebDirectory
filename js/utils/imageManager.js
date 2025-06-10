@@ -46,31 +46,36 @@ class ImageManager {
     // ELEMENTOS OPTIMIZADOS
     // ===================================
 
-    createOptimizedImageElement(imageName, alt, size, className = '') {
-        const imageId = `img_${Math.random().toString(36).substr(2, 9)}`;
-        const imageKey = `image_${imageName}`;
-        
-        // ✅ Re-enable WebP filename generation
-        const webpName = imageName.replace(/\.(jpg|jpeg|png)$/i, '.webp');
-        
-        // ✅ Restore the <picture> element for WebP support with fallback
-        return `
-            <picture>
-                <source srcset="${this.imagePath}${webpName}" type="image/webp">
-                <img 
-                    id="${imageId}"
-                    src="${this.imagePath}${imageName}" 
-                    alt="${alt}" 
-                    class="w-full h-full object-cover ${className}"
-                    loading="lazy"
-                    decoding="async"
-                    data-image-key="${imageKey}"
-                    onerror="window.ImageManager.handleImageError('${imageId}', '${imageName}', '${alt}', '${size}', '${className}')"
-                    onload="window.ImageManager.markAsLoaded('${imageKey}')"
-                >
-            </picture>
-        `;
-    }
+    // js/utils/imageManager.js
+
+// ... (resto del código de la clase)
+
+createOptimizedImageElement(imageName, alt, size, className = '') {
+    const imageId = `img_${Math.random().toString(36).substr(2, 9)}`;
+    const imageKey = `image_${imageName}`;
+    
+    const webpName = imageName.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+    
+    // SOLUCIÓN: Añadir clases al elemento <picture> para que ocupe todo su contenedor.
+    return `
+        <picture class="block w-full h-full">
+            <source srcset="${this.imagePath}${webpName}" type="image/webp">
+            <img 
+                id="${imageId}"
+                src="${this.imagePath}${imageName}" 
+                alt="${alt}" 
+                class="w-full h-full object-cover ${className}"
+                loading="lazy"
+                decoding="async"
+                data-image-key="${imageKey}"
+                onerror="window.ImageManager.handleImageError('${imageId}', '${imageName}', '${alt}', '${size}', '${className}')"
+                onload="window.ImageManager.markAsLoaded('${imageKey}')"
+            >
+        </picture>
+    `;
+}
+
+// ... (resto del código de la clase)
 
     createOptimizedIconElement(iconName, alt, size, className = '') {
         const iconId = `icon_${Math.random().toString(36).substr(2, 9)}`;
