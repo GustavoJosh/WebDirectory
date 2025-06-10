@@ -1,8 +1,7 @@
-// js/utils/imageManager.js - VERSIÓN OPTIMIZADA
+// js/utils/imageManager.js - VERSIÓN OPTIMIZADA CON WEBP RESTAURADO
 
 class ImageManager {
     constructor() {
-        // this.imagePath = 'assets/images/';
         this.imagePath = '/assets/images/';
         this.fallbackPath = 'assets/icons/';
         this.loadedImages = new Set(); // ✅ Cache de imágenes cargadas
@@ -14,11 +13,9 @@ class ImageManager {
     // ===================================
     
     getCardImage(imageData, size = 'xl', className = '') {
-        // ✅ OPTIMIZACIÓN: Verificar cache primero
         const imageKey = this.getImageKey(imageData);
         
         if (this.failedImages.has(imageKey)) {
-            // Si ya falló antes, ir directo al fallback
             return this.getFallbackForData(imageData, size, className);
         }
 
@@ -53,14 +50,10 @@ class ImageManager {
         const imageId = `img_${Math.random().toString(36).substr(2, 9)}`;
         const imageKey = `image_${imageName}`;
         
-        // ✅ AGREGAR ESTE CONSOLE.LOG:
-        console.log('🔍 Creando imagen simple:', this.imagePath + imageName);
+        // ✅ Re-enable WebP filename generation
+        const webpName = imageName.replace(/\.(jpg|jpeg|png)$/i, '.webp');
         
-        // ❌ COMENTAR EL WEBP TEMPORALMENTE:
-        // const webpName = imageName.replace(/\.(jpg|jpeg|png)$/i, '.webp');
-        
-        // ❌ COMENTAR EL <picture> TEMPORALMENTE:
-        /*
+        // ✅ Restore the <picture> element for WebP support with fallback
         return `
             <picture>
                 <source srcset="${this.imagePath}${webpName}" type="image/webp">
@@ -76,22 +69,6 @@ class ImageManager {
                     onload="window.ImageManager.markAsLoaded('${imageKey}')"
                 >
             </picture>
-        `;
-        */
-        
-        // ✅ USAR IMG SIMPLE TEMPORALMENTE:
-        return `
-            <img 
-                id="${imageId}"
-                src="${this.imagePath}${imageName}" 
-                alt="${alt}" 
-                class="w-full h-full object-cover ${className}"
-                loading="lazy"
-                decoding="async"
-                data-image-key="${imageKey}"
-                onerror="window.ImageManager.handleImageError('${imageId}', '${imageName}', '${alt}', '${size}', '${className}')"
-                onload="window.ImageManager.markAsLoaded('${imageKey}')"
-            >
         `;
     }
 
@@ -124,7 +101,6 @@ class ImageManager {
     // ===================================
 
     handleImageError(imageId, imageName, alt, size, className) {
-        // ✅ AGREGAR ESTOS CONSOLE.LOG TEMPORALMENTE:
         console.log('❌ Error cargando imagen:', imageName);
         console.log('📂 Ruta que falló:', this.imagePath + imageName);
         
@@ -134,17 +110,28 @@ class ImageManager {
         const imageKey = element.dataset.imageKey;
         this.failedImages.add(imageKey);
     
-        // ✅ OPTIMIZACIÓN: Solo un intento de fallback, luego emoji
         const iconName = imageName.replace(/\.(jpg|jpeg|png|webp)$/i, '.svg');
         const iconKey = `icon_${iconName}`;
         
         console.log('🔄 Intentando fallback con:', iconName);
         
+        // The error handler should be on the parent <picture> or the img itself.
+        // Since the error fires on the <img>, we need to replace its parent (<picture>).
+        const pictureElement = element.parentElement;
+        if (!pictureElement) return;
+
         if (!this.failedImages.has(iconKey)) {
-            element.src = this.fallbackPath + iconName;
-            element.className = 'w-full h-full object-contain ' + className;
-            element.dataset.imageKey = iconKey;
-            element.onerror = () => this.finalFallback(imageId, size, className);
+            // Create a new fallback <img> element
+            const fallbackImg = document.createElement('img');
+            fallbackImg.id = imageId; // Keep the same ID
+            fallbackImg.src = this.fallbackPath + iconName;
+            fallbackImg.alt = alt;
+            fallbackImg.className = 'w-full h-full object-contain ' + className;
+            fallbackImg.dataset.imageKey = iconKey;
+            fallbackImg.onerror = () => this.finalFallback(imageId, size, className);
+
+            pictureElement.replaceWith(fallbackImg);
+
         } else {
             this.finalFallback(imageId, size, className);
         }
@@ -164,10 +151,11 @@ class ImageManager {
         const element = document.getElementById(elementId);
         if (!element) return;
 
-        const container = element.parentElement;
-        if (container) {
-            // ✅ OPTIMIZACIÓN: Emoji inmediato, sin más intentos
-            container.innerHTML = this.createEmojiElement('📋', size, className);
+        // The element could be an <img> or a <picture> tag's child
+        const container = element.parentElement.tagName === 'PICTURE' ? element.parentElement : element;
+        
+        if (container && container.parentElement) {
+            container.parentElement.innerHTML = this.createEmojiElement('📋', size, className);
         }
     }
 
@@ -203,7 +191,6 @@ class ImageManager {
         const heroBackground = document.querySelector('.background-image');
         if (!heroBackground) return;
 
-        // ✅ NUEVO: Lazy loading para el background del hero
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -219,14 +206,12 @@ class ImageManager {
     }
 
     loadHeroBackground(element) {
-        // ✅ Intentar WebP primero, PNG como fallback
         const webpImg = new Image();
         webpImg.onload = () => {
             element.style.backgroundImage = "url('assets/images/doctoraybebe.webp')";
             element.classList.add('background-loaded');
         };
         webpImg.onerror = () => {
-            // Fallback a PNG original
             const pngImg = new Image();
             pngImg.onload = () => {
                 element.style.backgroundImage = "url('assets/images/doctoraybebe.png')";
@@ -267,22 +252,19 @@ class ImageManager {
         `;
     }
 
-    // ✅ OPTIMIZACIÓN: Preload más inteligente
     preloadImages(imageList) {
-        // Solo precargar las primeras 3 imágenes críticas
         const criticalImages = imageList.slice(0, 3);
         
         criticalImages.forEach(imageData => {
             if (imageData.image && !this.loadedImages.has(`image_${imageData.image}`)) {
                 const link = document.createElement('link');
-                link.rel = 'prefetch';
+                link.rel = 'prefetch'; // 'prefetch' is better for non-critical, future navigations
                 link.href = this.imagePath + imageData.image;
                 document.head.appendChild(link);
             }
         });
     }
 
-    // ✅ NUEVO: Limpiar cache si es necesario
     clearCache() {
         this.loadedImages.clear();
         this.failedImages.clear();
