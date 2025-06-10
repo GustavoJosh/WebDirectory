@@ -8,52 +8,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.js"></script>
     
-    <!-- ===================================
-         ESTILOS CSS MODULARES 
-         =================================== -->
-    
-    <!-- Variables CSS globales (se cargan primero) -->
-    <link rel="stylesheet" href="css/variables.css">
-    
-    <!-- Estilos base existentes -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/landing.css">
-    <link rel="stylesheet" href="css/specialty-cards.css">
-    
-    <!-- Nuevos estilos modulares del hero -->
-    <link rel="stylesheet" href="css/hero-section.css">
-    <link rel="stylesheet" href="css/hero-typography.css">
-    <link rel="stylesheet" href="css/hero-components.css">
-    <link rel="stylesheet" href="css/floating-gallery.css">
-    <link rel="stylesheet" href="css/particle-effects.css">
+    <link rel="stylesheet" href="css/main.css">
 
 </head>
 <body style="font-family: 'Nunito Sans', sans-serif;">
-    <!-- ===================================
-         PÁGINA DE BIENVENIDA
-         =================================== -->
+    
+    
+    <div class="background-wrapper">
+        <div class="background-image"></div>
+        <div class="overlay"></div>
+        
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </div>
     <div id="welcomePage" class="min-h-screen">
-        <!-- Hero Section Modernizado -->
         <section id="heroSection" class="hero-section">
-            <!-- Background con imagen y overlay -->
-            <div class="background-wrapper">
-                <div class="background-image"></div>
-                <div class="overlay"></div>
-                
-                <!-- Sistema de partículas flotantes -->
-                <div class="particles">
-                    <div class="particle"></div>
-                    <div class="particle"></div>
-                    <div class="particle"></div>
-                    <div class="particle"></div>
-                    <div class="particle"></div>
-                </div>
-            </div>
+           
             
-            <!-- Contenido principal del hero -->
             <div class="content-container">
-                <!-- Contenido textual (izquierda) -->
                 <div class="content-left">
                     
                     
@@ -71,7 +48,6 @@
                         necesitas.
                     </p>
                     
-                    <!-- Estadísticas -->
                     <div class="stats-container">
                         <div class="stat-item">
                             <div class="stat-number">+500</div>
@@ -87,7 +63,6 @@
                         </div>
                     </div>
                     
-                    <!-- Botones CTA -->
                     <div class="buttons-container">
                         <button onclick="window.AppNavigation.showDirectory()" class="hero-btn hero-btn-primary">
                             Conoce a Nuestros Especialistas
@@ -98,7 +73,6 @@
                     </div>
                 </div>
                 
-                <!-- Galería flotante (derecha) -->
                 <div class="content-right">
                     <div class="floating-gallery">
                         <div class="gallery-item gallery-item-1">
@@ -115,18 +89,12 @@
             </div>
         </section>
         
-        <!-- About Section (generada dinámicamente) -->
         <section id="aboutSection" class="hidden">
-            <!-- El contenido se genera dinámicamente por JavaScript -->
-        </section>
+            </section>
     </div>
 
-    <!-- ===================================
-         PÁGINA DEL DIRECTORIO
-         =================================== -->
     <div id="directoryPage" class="page-hidden min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
         <div class="w-full max-w-5xl mx-auto">
-            <!-- Header del Directorio -->
             <header class="text-center mb-8 md:mb-12">
                 <button onclick="AppNavigation.showWelcome()" class="mb-6 text-slate-600 hover:text-slate-800 flex items-center gap-2 mx-auto transition-colors duration-200">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -139,32 +107,21 @@
                 <p class="text-base text-slate-500 max-w-2xl mx-auto">Profesionales comprometidos con su salud y bienestar</p>
             </header>
 
-            <!-- Navigation Tabs -->
             <nav class="flex flex-col sm:flex-row justify-center items-center bg-white p-2 rounded-2xl shadow-lg border border-slate-200/50 mb-8 md:mb-12 gap-2 sm:gap-0" id="doctorTabs">
-                <!-- Los tabs se generan dinámicamente -->
-            </nav>
+                </nav>
 
-            <!-- Doctor Profile Card -->
             <main class="rounded-2xl shadow-xl border-2 overflow-hidden animate-fade-in" id="doctorProfile">
-                <!-- El contenido se genera dinámicamente -->
-            </main>
+                </main>
         </div>
     </div>
 
-<!-- REEMPLAZO COMPLETO DEL FOOTER -->
-
-<!-- Footer con gradiente integrado -->
 <footer class="relative text-white" style="margin-top: -1px;">
-    <!-- Gradiente superior integrado -->
     <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white via-emerald-50/20 to-transparent pointer-events-none"></div>
     
-    <!-- Contenido del footer con gradiente de fondo -->
     <div class="relative bg-gradient-to-r from-emerald-700 to-sky-700 pt-20 pb-8">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <!-- Contenido principal del footer -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
                 
-                <!-- Columna 1: Info de la clínica -->
                 <div>
                     <h3 class="text-xl font-bold mb-4 text-yellow-300">Consultorio CADIM</h3>
                     <p class="text-white/90 text-sm leading-relaxed mb-4">
@@ -179,18 +136,15 @@
                     </div>
                 </div>
 
-                <!-- Columna 2: Enlaces rápidos -->
                 <div>
                     <h4 class="text-lg font-semibold mb-4 text-yellow-300">Enlaces Rápidos</h4>
                     <ul class="space-y-2 text-sm">
                         <li><a href="#inicio" onclick="AppNavigation.showWelcome()" class="text-white/80 hover:text-white transition-colors">Inicio</a></li>
                         <li><a href="#especialistas" onclick="AppNavigation.showDirectory()" class="text-white/80 hover:text-white transition-colors">Especialistas</a></li>
-                        <li><a href="#servicios" onclick="WelcomePage.showAboutView()" class="text-white/80 hover:text-white transition-colors">Servicios</a></li>
                         <li><a href="aviso-privacidad.html" class="text-white/80 hover:text-white transition-colors">Aviso de Privacidad</a></li>
                     </ul>
                 </div>
 
-                <!-- Columna 3: Contacto -->
                 <div>
                     <h4 class="text-lg font-semibold mb-4 text-yellow-300">Contacto</h4>
                     <div class="space-y-2 text-sm">
@@ -220,7 +174,6 @@
                 </div>
             </div>
 
-            <!-- Línea divisoria y copyright -->
             <div class="border-t border-white/20 pt-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                 <p class="text-white/80 text-sm text-center md:text-left">
                     &copy; 2025 Consultorio CADIM La Paz. Todos los derechos reservados.
@@ -232,9 +185,6 @@
 
 
 
-    <!-- ===================================
-         SCRIPTS JAVASCRIPT MODULARES
-         =================================== -->
     <script src="js/data/doctors.js"></script>
     <script src="js/data/landingContent.js"></script>
     <script src="js/utils/colorUtils.js"></script>
