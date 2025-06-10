@@ -26,13 +26,13 @@ const doctorsData = [
     },
     {
         id: 2,
-        name: 'Dr. Jorge Iván Aguilar Ortiz',
-        specialty: 'Medicina Interna',
-        bio: 'Soy especialista en Medicina Interna, con amplia experiencia en el diagnóstico, tratamiento y seguimiento de enfermedades crónicas y agudas en adultos. Mi enfoque está centrado en ofrecer atención médica integral, personalizada y basada en evidencia científica.',
+        name: 'Dr. Jorge Iván Aguiar Ortiz',
+        specialty: 'Medicina Interna - HE UMAE - CMNO',
+        bio: 'Soy especialista en Medicina Interna, con amplia experiencia en el diagnóstico, tratamiento y seguimiento de enfermedades agudas y crónicas en adultos. Mi enfoque está centrado en ofrecer atención médica integral, personalizada y basada en evidencia científica.',
         services: [
-            'Diagnóstico y manejo de enfermedades crónicas como diabetes, hipertensión y enfermedades respiratorias',
-            'Atención a pacientes con múltiples condiciones médicas',
-            'Seguimiento de enfermedades autoinmunes e infecciosas',
+            'Diagnóstico y tratamiento de enfermedades crónicas como diabetes tipo 1 y 2, hipertensión, enfermedades respiratorias y del sistema digestivo',
+            'Tratamiento y seguimiento para pacientes con hipertensión arterial sistémica',
+            'Tratamiento y seguimiento de enfermedades autoinmunes, infecciosas, endocrinológicas y del sistema nervioso central',
             'Evaluaciones médicas integrales',
             'Coordinación con otras especialidades para un abordaje completo'
         ],
