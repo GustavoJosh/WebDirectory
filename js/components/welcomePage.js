@@ -28,7 +28,6 @@ class WelcomePage {
                     ${hero.description}
                 </p>
                 
-                <!-- Estadísticas -->
                 <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-12 animate-pulse-soft">
                     ${hero.stats.map(stat => `
                         <div class="text-center stat-item">
@@ -38,7 +37,6 @@ class WelcomePage {
                     `).join('')}
                 </div>
                 
-                <!-- Botones CTA -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <button onclick="window.AppNavigation.showDirectory()" 
                         class="bg-gradient-to-r from-emerald-600 to-sky-600 text-white px-10 py-4 rounded-full text-lg font-semibold hover:from-emerald-700 hover:to-sky-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
@@ -68,7 +66,6 @@ class WelcomePage {
         }
 
         aboutContainer.innerHTML = `
-            <!-- Botón de regreso -->
             <button onclick="window.WelcomePage.showHeroView()" 
                 class="fixed top-8 left-8 z-50 bg-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-x-1">
                 <span class="flex items-center gap-2">
@@ -93,7 +90,7 @@ class WelcomePage {
         const { whyChoose } = window.LandingContent;
         
         return `
-            <!-- ✅ AGREGAR LA CLASE why-choose-section -->
+            
             <div class="mb-20 animate-fade-in why-choose-section">
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-12 text-center">${whyChoose.title}</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -101,8 +98,8 @@ class WelcomePage {
                         const imageElement = window.ImageManager.getCardImage(feature, 'lg');
                         
                         return `
-                            <!-- ✅ QUITAR bg-white/90, ya está en CSS -->
-                            <div class="feature-card backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300">
+                            
+                            <div class="feature-card bg-white backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300">
                                 <div class="w-50 h-50 mx-auto mb-4 rounded-lg overflow-hidden aspect-square">
                                     ${imageElement}
                                 </div>
@@ -120,7 +117,7 @@ class WelcomePage {
         const { specialties } = window.LandingContent;
         
         return `
-            <div class="animate-fade-in">
+            <div class="animate-fade-in specialties-section">
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-12 text-center">${specialties.title}</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     ${specialties.services.map((service, index) => {
