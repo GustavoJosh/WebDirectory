@@ -3,13 +3,14 @@ const doctorsData = [
         id: 1,
         name: 'Dr. Javier Hector Pérez Carcaño',
         specialty: 'Ginecología y obstetricia - laparoscopía - Fertilidad, climaterio y menopausia .', 
-        bio: 'Con más de 20 años de experiencia en salud femenina, me especializo en ginecología y obstetricia, ofreciendo atención integral en todas las etapas de la vida de la mujer. Brindo acompañamiento profesional y humano en procesos de fertilidad, climaterio y menopausia, con tratamientos personalizados y basados en evidencia médica.',
+        bio: 'Médico Cirujano por la UNAM con especialidad en Ginecología y Obstetricia, y más de 20 años de experiencia. Cirujano laparoscopista ginecológico certificado por el CMGO. Especializado en fertilidad, climaterio y menopausia, con enfoque integral en la salud de la mujer durante todo su ciclo vital.',
+
         services: [
             'Controles ginecológicos y obstétricos',
-            'Evaluación y tratamiento de infertilidad',
-            'Manejo de hipertensión y arritmias',
-            'Manejo del climaterio y la menopausia',
-            'Ultrasonidos ginecológicos y obstétricos'
+            'Cirugía laparoscópica ginecológica',
+            'Tratamientos de fertilidad (Life Fertility)',
+            'Manejo del climaterio y menopausia',
+            'Ultrasonido Doppler y ecocardiografía fetal'
         ],
         hospital: {
             name: 'CADIM - La Paz',
@@ -81,12 +82,11 @@ const doctorsData = [
         bio: 'Médico especialista en Ginecología y Obstetricia egresado de la UNAM con amplia experiencia en atención integral de la salud femenina. Me dedico a brindar cuidado médico de excelencia, combinando conocimientos actualizados con un trato humano y cercano para acompañar a mis pacientes en todas las etapas de su vida reproductiva.',
         services: [
             'Consultas ginecológicas de rutina y especializadas',
-            'Control prenatal y seguimiento del embarazo',
-            'Atención del parto y cesáreas',
-            'Manejo de patologías ginecológicas',
-            'Ultrasonido ginecológico y obstétrico',
-            'Cirugía ginecológica mínimamente invasiva',
-            'Planificación familiar y anticoncepción'
+            'Consulta y seguimiento para embarazos de alto riesgo',
+            'Cirugía laparoscópica',
+            'Tratamiento para infecciones vaginales',
+            'Consulta y tratamiento de trastornos menstruales',
+            'Control prenatal'
         ],
         hospital: {
             name: 'CADIM - La Paz',
