@@ -14,7 +14,7 @@ const doctorsData = [
         hospital: {
             name: 'CADIM - La Paz',
             address: 'Ignacio Allende 2135, Los Olivos, 23040 La Paz, B.C.S.',
-            locationUrl: 'https://g.co/kgs/xyJMzwH'
+            locationUrl: 'https://g.co/kgs/m59jixh'
         },
         //  Información de WhatsApp
         whatsapp: {
@@ -39,7 +39,7 @@ const doctorsData = [
         hospital: {
             name: 'CADIM - La Paz',
             address: 'Ignacio Allende 2135, Los Olivos, 23040 La Paz, B.C.S.',
-            locationUrl: 'https://maps.google.com/?q=Clínica+Salud+Integral,+Avenida+Progreso+789,+Ciudad+Esperanza'
+            locationUrl: 'https://g.co/kgs/m59jixh'
         },
        
         whatsapp: {
@@ -64,7 +64,7 @@ const doctorsData = [
         hospital: {
             name: 'CADIM - La Paz',
             address: 'Ignacio Allende 2135, Los Olivos, 23040 La Paz, B.C.S.',
-            locationUrl: 'https://maps.google.com/?q=Centro+Médico+Vida+Plena,+Calle+Bienestar+456,+Ciudad+Esperanza'
+            locationUrl: 'https://g.co/kgs/m59jixh'
         },
         
         whatsapp: {
@@ -91,7 +91,7 @@ const doctorsData = [
         hospital: {
             name: 'CADIM - La Paz',
             address: 'Ignacio Allende 2135, Los Olivos, 23040 La Paz, B.C.S.',
-            locationUrl: 'https://maps.google.com/?q=Hospital+Materno+Infantil+San+Rafael,+Av.+Universidad+789,+Ciudad+de+México'
+            locationUrl: 'https://g.co/kgs/m59jixh'
         },
        
         whatsapp: {
