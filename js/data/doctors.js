@@ -16,7 +16,7 @@ const doctorsData = [
             address: 'Ignacio Allende 2135, Los Olivos, 23040 La Paz, B.C.S.',
             locationUrl: 'https://g.co/kgs/xyJMzwH'
         },
-        // ✨ NUEVO: Información de WhatsApp
+        //  Información de WhatsApp
         whatsapp: {
             number: '6122311713', // Número sin espacios ni símbolos
             message: 'Hola Dr. Pérez, me gustaría agendar una consulta. ¿Cuál sería su disponibilidad?'
@@ -41,7 +41,7 @@ const doctorsData = [
             address: 'Ignacio Allende 2135, Los Olivos, 23040 La Paz, B.C.S.',
             locationUrl: 'https://maps.google.com/?q=Clínica+Salud+Integral,+Avenida+Progreso+789,+Ciudad+Esperanza'
         },
-        // ✨ NUEVO: Información de WhatsApp
+       
         whatsapp: {
             number: '6122311713',
             message: 'Hola Dr. Aguilar, necesito una consulta de medicina interna. ¿Podría agendar una cita?'
@@ -66,9 +66,9 @@ const doctorsData = [
             address: 'Ignacio Allende 2135, Los Olivos, 23040 La Paz, B.C.S.',
             locationUrl: 'https://maps.google.com/?q=Centro+Médico+Vida+Plena,+Calle+Bienestar+456,+Ciudad+Esperanza'
         },
-        // ✨ NUEVO: Información de WhatsApp
+        
         whatsapp: {
-            number: '66122311713',
+            number: '6122311713',
             message: 'Hola Dra. Savin, me gustaría solicitar una consulta. ¿Cuáles son sus horarios disponibles?'
         },
         color: 'pink',
@@ -93,7 +93,7 @@ const doctorsData = [
             address: 'Ignacio Allende 2135, Los Olivos, 23040 La Paz, B.C.S.',
             locationUrl: 'https://maps.google.com/?q=Hospital+Materno+Infantil+San+Rafael,+Av.+Universidad+789,+Ciudad+de+México'
         },
-        // ✨ NUEVO: Información de WhatsApp
+       
         whatsapp: {
             number: '6122311713',
             message: 'Hola Dr. Castro, me interesa agendar una consulta. ¿Cuándo tendría disponibilidad?'
