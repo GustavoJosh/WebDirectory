@@ -35,17 +35,48 @@ class DoctorProfile {
     }
 
     static generateProfileSidebar(doctor, colorClasses) {
+        // 🔧 CORREGIDO: Usar ImageManager existente
+        const profileImageHTML = this.generateProfileImage(doctor, colorClasses);
+        
         return `
             <div class="lg:col-span-1 p-8 ${colorClasses.profileBg} flex flex-col items-center justify-center text-center border-b lg:border-b-0 lg:border-r ${colorClasses.borderColor}">
-                <div class="w-32 h-32 rounded-full bg-white border-4 ${colorClasses.borderColor} shadow-lg mb-6 flex items-center justify-center text-6xl">
-                    ${doctor.icon}
-                </div>
+                ${profileImageHTML}
                 <h2 class="text-2xl font-bold text-slate-800 mb-2">${doctor.name}</h2>
                 <p class="font-semibold ${colorClasses.specialty} text-center text-sm leading-relaxed">
                     ${doctor.specialty}
                 </p>
             </div>
         `;
+    }
+
+    // 🔧 CORREGIDO: Usar ImageManager en lugar de manejo manual
+    static generateProfileImage(doctor, colorClasses) {
+        // Si tiene foto de perfil configurada, usar ImageManager
+        if (doctor.profilePhoto && doctor.profilePhoto.image) {
+            // Crear objeto compatible con ImageManager
+            const imageData = {
+                image: `profiles/${doctor.profilePhoto.image}`, // Agregar carpeta profiles/
+                alt: doctor.profilePhoto.alt || doctor.name,
+                emoji: doctor.icon // 🔧 IMPORTANTE: Emoji específico del doctor
+            };
+            
+            // Usar ImageManager para generar la imagen con fallbacks automáticos
+            const imageElement = window.ImageManager.getCardImage(imageData, 'xl', '');
+            
+            return `
+                <div class="w-34 h-34 overflow-hidden border-4 ${colorClasses.borderColor} shadow-lg mb-6 bg-white rounded-full">
+                    ${imageElement}
+                </div>
+            `;
+        } 
+        // Fallback directo al emoji si no tiene profilePhoto
+        else {
+            return `
+                <div class="w-32 h-32 rounded-full bg-white border-4 ${colorClasses.borderColor} shadow-lg mb-6 flex items-center justify-center text-6xl">
+                    ${doctor.icon}
+                </div>
+            `;
+        }
     }
 
     static generateProfileContent(doctor, colorClasses, servicesHTML) {
@@ -67,7 +98,6 @@ class DoctorProfile {
     }
 
     static generateHospitalInfo(doctor, colorClasses) {
-        // ✨ NUEVO: Generar URL de WhatsApp
         const whatsappUrl = this.generateWhatsAppUrl(doctor.whatsapp);
         
         return `
@@ -82,9 +112,7 @@ class DoctorProfile {
                             <p class="font-semibold text-slate-700 text-lg">${doctor.hospital.name}</p>
                             <p class="text-slate-600 text-sm mb-4">${doctor.hospital.address}</p>
                             
-                            <!-- ✨ NUEVO: Contenedor de botones -->
                             <div class="flex flex-col sm:flex-row gap-3">
-                                <!-- Botón de Google Maps existente -->
                                 <a href="${doctor.hospital.locationUrl}" target="_blank" rel="noopener noreferrer" 
                                    class="inline-flex items-center justify-center gap-2 text-white px-4 py-2 rounded-lg transition duration-300 shadow-md text-sm font-medium ${colorClasses.mapButton}">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -94,7 +122,6 @@ class DoctorProfile {
                                     Ver en Google Maps
                                 </a>
                                 
-                                <!-- ✨ NUEVO: Botón de WhatsApp -->
                                 <a href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" 
                                    class="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition duration-300 shadow-md text-sm font-medium">
                                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -110,19 +137,14 @@ class DoctorProfile {
         `;
     }
 
-    // ✨ NUEVO: Método para generar URL de WhatsApp
     static generateWhatsAppUrl(whatsappData) {
         if (!whatsappData || !whatsappData.number) {
             return '#';
         }
         
-        // Limpiar el número (solo dígitos)
         const cleanNumber = whatsappData.number.replace(/\D/g, '');
-        
-        // Codificar el mensaje para URL
         const encodedMessage = encodeURIComponent(whatsappData.message || 'Hola, me gustaría agendar una consulta.');
         
-        // Generar URL de WhatsApp
         return `https://wa.me/${cleanNumber}?text=${encodedMessage}`;
     }
 
