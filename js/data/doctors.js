@@ -5,7 +5,7 @@ const doctorsData = [
         "specialty": "Ginecología, Obstetricia, Cirugía Laparoscópica, Fertilidad y Climaterio",
         "bio": "Médico Cirujano egresado de la UNAM con más de 20 años de experiencia y una profunda vocación de servicio. Mi enfoque es entregar atención y conocimiento integral para el cuidado de la salud femenina en todo su ciclo vital, combinando la más alta preparación, que incluye especialidades en Laparoscopía, Fertilidad y Ultrasonido Doppler, con una genuina sensibilidad y preocupación por mis pacientes.",
         "profilePhoto": {
-            "image": "default.webp",
+            "image": "drperez.webp",
             "alt": "Dr. Javier Hector Pérez Carcaño"
         },
         "services": [
@@ -29,7 +29,7 @@ const doctorsData = [
     },
     {
         id: 2,
-        name: 'Dr. Jorge Iván Aguiar Ortiz', //el nombre esta bien escrito, es aguiar no aguilar. 
+        name: 'Dr. Jorge Iván Aguiar Ortiz', //el nombre esta bien escrito, el apellido es aguiar no aguilar. 
         specialty: 'Medicina Interna',
         bio: 'Soy especialista en Medicina Interna, con amplia experiencia en el diagnóstico, tratamiento y seguimiento de enfermedades crónicas y agudas en adultos. Mi enfoque está centrado en ofrecer atención médica integral, personalizada y basada en evidencia científica.',
         profilePhoto: {
@@ -87,7 +87,7 @@ const doctorsData = [
     },
     {
         id: 4,
-        name: 'Dr. Wilbert Armin Castro Montoya',
+        name: 'Dr. Wiltber Armin Castro Montoya', //wiltber esta bien escrito, no es wilbert
         specialty: 'Ginecología y Obstetricia UNAM',
         bio: 'Médico especialista en Ginecología y Obstetricia egresado de la UNAM con amplia experiencia en atención integral de la salud femenina. Me dedico a brindar cuidado médico de excelencia, combinando conocimientos actualizados con un trato humano y cercano para acompañar a mis pacientes en todas las etapas de su vida reproductiva.',
         // ✅ Foto de perfil corregida para Dr. Castro

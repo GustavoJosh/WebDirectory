@@ -1,3 +1,5 @@
+// js/components/doctorProfile.js - VERSIÓN CORREGIDA
+
 class DoctorProfile {
     static generateProfile(selectedDoctorId) {
         const { doctorsData } = window.DoctorsData;
@@ -34,10 +36,37 @@ class DoctorProfile {
         `).join('');
     }
 
+    // 🔧 VERSIÓN SIMPLIFICADA SIN IMAGEMANAGER
     static generateProfileSidebar(doctor, colorClasses) {
-        // 🔧 CORREGIDO: Usar ImageManager existente
-        const profileImageHTML = this.generateProfileImage(doctor, colorClasses);
+        // Determinar si usar imagen o emoji
+        const hasProfilePhoto = doctor.profilePhoto && doctor.profilePhoto.image;
         
+        let profileImageHTML;
+        if (hasProfilePhoto) {
+            // Usar imagen real con fallback automático
+            profileImageHTML = `
+                <div class="w-38 h-38 rounded-full overflow-hidden border-4 ${colorClasses.borderColor} shadow-lg mb-6 bg-white">
+                    <img 
+                        src="assets/images/profiles/${doctor.profilePhoto.image}" 
+                        alt="${doctor.profilePhoto.alt || doctor.name}"
+                        class="w-full h-full object-cover object-center"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                        loading="lazy"
+                    >
+                    <div class="w-full h-full flex items-center justify-center text-6xl" style="display: none;">
+                        ${doctor.icon}
+                    </div>
+                </div>
+            `;
+        } else {
+            // Usar emoji directamente
+            profileImageHTML = `
+                <div class="w-32 h-32 rounded-full bg-white border-4 ${colorClasses.borderColor} shadow-lg mb-6 flex items-center justify-center text-6xl">
+                    ${doctor.icon}
+                </div>
+            `;
+        }
+
         return `
             <div class="lg:col-span-1 p-8 ${colorClasses.profileBg} flex flex-col items-center justify-center text-center border-b lg:border-b-0 lg:border-r ${colorClasses.borderColor}">
                 ${profileImageHTML}
@@ -47,36 +76,6 @@ class DoctorProfile {
                 </p>
             </div>
         `;
-    }
-
-    // 🔧 CORREGIDO: Usar ImageManager en lugar de manejo manual
-    static generateProfileImage(doctor, colorClasses) {
-        // Si tiene foto de perfil configurada, usar ImageManager
-        if (doctor.profilePhoto && doctor.profilePhoto.image) {
-            // Crear objeto compatible con ImageManager
-            const imageData = {
-                image: `profiles/${doctor.profilePhoto.image}`, // Agregar carpeta profiles/
-                alt: doctor.profilePhoto.alt || doctor.name,
-                emoji: doctor.icon // 🔧 IMPORTANTE: Emoji específico del doctor
-            };
-            
-            // Usar ImageManager para generar la imagen con fallbacks automáticos
-            const imageElement = window.ImageManager.getCardImage(imageData, 'xl', '');
-            
-            return `
-                <div class="w-34 h-34 overflow-hidden border-4 ${colorClasses.borderColor} shadow-lg mb-6 bg-white rounded-full">
-                    ${imageElement}
-                </div>
-            `;
-        } 
-        // Fallback directo al emoji si no tiene profilePhoto
-        else {
-            return `
-                <div class="w-32 h-32 rounded-full bg-white border-4 ${colorClasses.borderColor} shadow-lg mb-6 flex items-center justify-center text-6xl">
-                    ${doctor.icon}
-                </div>
-            `;
-        }
     }
 
     static generateProfileContent(doctor, colorClasses, servicesHTML) {
@@ -156,5 +155,5 @@ class DoctorProfile {
     }
 }
 
-// Exportar para uso global
+// 🔧 CRÍTICO: Asegurar exportación global
 window.DoctorProfile = DoctorProfile;
