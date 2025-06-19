@@ -33,7 +33,7 @@ const doctorsData = [
         specialty: 'Medicina Interna',
         bio: 'Soy especialista en Medicina Interna, con amplia experiencia en el diagnóstico, tratamiento y seguimiento de enfermedades crónicas y agudas en adultos. Mi enfoque está centrado en ofrecer atención médica integral, personalizada y basada en evidencia científica.',
         profilePhoto: {
-            image: 'default.webp',
+            image: 'draguiar.webp',
             alt: 'Dr. Jorge Iván Aguiar Ortiz'
         },
         services: [
