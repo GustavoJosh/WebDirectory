@@ -703,3 +703,77 @@ body {
     padding-top: 5rem; /* Añade espacio superior para que no se pegue al borde */
     padding-bottom: 5rem; /* Espacio inferior */
 }
+
+
+/* =================================
+   PERFILES DE DOCTORES - IMÁGENES CONSISTENTES
+   ================================= */
+
+/* Contenedor principal del perfil de doctor */
+.doctor-profile-container {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem auto;
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.doctor-profile-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen real del doctor */
+.doctor-profile-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+/* Fallback emoji cuando no hay imagen */
+.doctor-emoji-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 50%;
+}
+
+/* Versiones responsive */
+@media (max-width: 768px) {
+    .doctor-profile-container {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .doctor-emoji-fallback {
+        font-size: 2.5rem;
+    }
+}
+
+/* Clases de colores para bordes */
+.doctor-border-emerald {
+    border: 4px solid #10b981;
+}
+
+.doctor-border-sky {
+    border: 4px solid #0ea5e9;
+}
+
+.doctor-border-pink {
+    border: 4px solid #ec4899;
+}
+
+.doctor-border-blue {
+    border: 4px solid #3b82f6;
+}

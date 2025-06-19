@@ -1,11 +1,11 @@
-// js/utils/imageManager.js - VERSIÓN OPTIMIZADA CON WEBP RESTAURADO
+// js/utils/imageManager.js - CORRECCIÓN PARA EMOJI FALLBACK
 
 class ImageManager {
     constructor() {
-        this.imagePath = '/assets/images/';
+        this.imagePath = 'assets/images/';
         this.fallbackPath = 'assets/icons/';
-        this.loadedImages = new Set(); // ✅ Cache de imágenes cargadas
-        this.failedImages = new Set(); // ✅ Cache de imágenes fallidas
+        this.loadedImages = new Set();
+        this.failedImages = new Set();
     }
 
     // ===================================
@@ -20,7 +20,7 @@ class ImageManager {
         }
 
         if (imageData.image) {
-            return this.createOptimizedImageElement(imageData.image, imageData.alt || imageData.title, size, className);
+            return this.createOptimizedImageElement(imageData.image, imageData.alt || imageData.title, size, className, imageData.emoji);
         } else if (imageData.icon) {
             return this.createOptimizedIconElement(imageData.icon, imageData.alt || imageData.title, size, className);
         } else if (imageData.emoji) {
@@ -46,36 +46,31 @@ class ImageManager {
     // ELEMENTOS OPTIMIZADOS
     // ===================================
 
-    // js/utils/imageManager.js
-
-// ... (resto del código de la clase)
-
-createOptimizedImageElement(imageName, alt, size, className = '') {
-    const imageId = `img_${Math.random().toString(36).substr(2, 9)}`;
-    const imageKey = `image_${imageName}`;
-    
-    const webpName = imageName.replace(/\.(jpg|jpeg|png)$/i, '.webp');
-    
-    // SOLUCIÓN: Añadir clases al elemento <picture> para que ocupe todo su contenedor.
-    return `
-        <picture class="block w-full h-full">
-            <source srcset="${this.imagePath}${webpName}" type="image/webp">
-            <img 
-                id="${imageId}"
-                src="${this.imagePath}${imageName}" 
-                alt="${alt}" 
-                class="w-full h-full object-cover ${className}"
-                loading="lazy"
-                decoding="async"
-                data-image-key="${imageKey}"
-                onerror="window.ImageManager.handleImageError('${imageId}', '${imageName}', '${alt}', '${size}', '${className}')"
-                onload="window.ImageManager.markAsLoaded('${imageKey}')"
-            >
-        </picture>
-    `;
-}
-
-// ... (resto del código de la clase)
+    // 🔧 CORREGIDO: Pasar emoji para fallback
+    createOptimizedImageElement(imageName, alt, size, className = '', fallbackEmoji = '📋') {
+        const imageId = `img_${Math.random().toString(36).substr(2, 9)}`;
+        const imageKey = `image_${imageName}`;
+        
+        const webpName = imageName.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+        
+        return `
+            <picture class="block w-full h-full">
+                <source srcset="${this.imagePath}${webpName}" type="image/webp">
+                <img 
+                    id="${imageId}"
+                    src="${this.imagePath}${imageName}" 
+                    alt="${alt}" 
+                    class="w-full h-full object-cover ${className}"
+                    loading="lazy"
+                    decoding="async"
+                    data-image-key="${imageKey}"
+                    data-fallback-emoji="${fallbackEmoji}"
+                    onerror="window.ImageManager.handleImageError('${imageId}', '${imageName}', '${alt}', '${size}', '${className}', '${fallbackEmoji}')"
+                    onload="window.ImageManager.markAsLoaded('${imageKey}')"
+                >
+            </picture>
+        `;
+    }
 
     createOptimizedIconElement(iconName, alt, size, className = '') {
         const iconId = `icon_${Math.random().toString(36).substr(2, 9)}`;
@@ -105,7 +100,8 @@ createOptimizedImageElement(imageName, alt, size, className = '') {
     // MANEJO OPTIMIZADO DE ERRORES
     // ===================================
 
-    handleImageError(imageId, imageName, alt, size, className) {
+    // 🔧 CORREGIDO: Usar emoji específico del doctor
+    handleImageError(imageId, imageName, alt, size, className, fallbackEmoji = '📋') {
         console.log('❌ Error cargando imagen:', imageName);
         console.log('📂 Ruta que falló:', this.imagePath + imageName);
         
@@ -114,31 +110,15 @@ createOptimizedImageElement(imageName, alt, size, className = '') {
     
         const imageKey = element.dataset.imageKey;
         this.failedImages.add(imageKey);
-    
-        const iconName = imageName.replace(/\.(jpg|jpeg|png|webp)$/i, '.svg');
-        const iconKey = `icon_${iconName}`;
         
-        console.log('🔄 Intentando fallback con:', iconName);
+        // 🔧 USAR EL EMOJI ESPECÍFICO DEL DOCTOR
+        const emojiToUse = fallbackEmoji || element.dataset.fallbackEmoji || '📋';
         
-        // The error handler should be on the parent <picture> or the img itself.
-        // Since the error fires on the <img>, we need to replace its parent (<picture>).
+        console.log('🔄 Usando emoji fallback:', emojiToUse);
+        
         const pictureElement = element.parentElement;
-        if (!pictureElement) return;
-
-        if (!this.failedImages.has(iconKey)) {
-            // Create a new fallback <img> element
-            const fallbackImg = document.createElement('img');
-            fallbackImg.id = imageId; // Keep the same ID
-            fallbackImg.src = this.fallbackPath + iconName;
-            fallbackImg.alt = alt;
-            fallbackImg.className = 'w-full h-full object-contain ' + className;
-            fallbackImg.dataset.imageKey = iconKey;
-            fallbackImg.onerror = () => this.finalFallback(imageId, size, className);
-
-            pictureElement.replaceWith(fallbackImg);
-
-        } else {
-            this.finalFallback(imageId, size, className);
+        if (pictureElement && pictureElement.parentElement) {
+            pictureElement.parentElement.innerHTML = this.createEmojiElement(emojiToUse, size, className);
         }
     }
 
@@ -156,7 +136,6 @@ createOptimizedImageElement(imageName, alt, size, className = '') {
         const element = document.getElementById(elementId);
         if (!element) return;
 
-        // The element could be an <img> or a <picture> tag's child
         const container = element.parentElement.tagName === 'PICTURE' ? element.parentElement : element;
         
         if (container && container.parentElement) {
@@ -179,11 +158,12 @@ createOptimizedImageElement(imageName, alt, size, className = '') {
         return 'unknown';
     }
 
+    // 🔧 CORREGIDO: Usar emoji específico en fallback
     getFallbackForData(imageData, size, className) {
-        if (imageData.icon) {
-            return this.createEmojiElement('🔧', size, className);
-        } else if (imageData.emoji) {
+        if (imageData.emoji) {
             return this.createEmojiElement(imageData.emoji, size, className);
+        } else if (imageData.icon) {
+            return this.createEmojiElement('🔧', size, className);
         }
         return this.createEmojiElement('📋', size, className);
     }
@@ -263,7 +243,7 @@ createOptimizedImageElement(imageName, alt, size, className = '') {
         criticalImages.forEach(imageData => {
             if (imageData.image && !this.loadedImages.has(`image_${imageData.image}`)) {
                 const link = document.createElement('link');
-                link.rel = 'prefetch'; // 'prefetch' is better for non-critical, future navigations
+                link.rel = 'prefetch';
                 link.href = this.imagePath + imageData.image;
                 document.head.appendChild(link);
             }
@@ -278,4 +258,4 @@ createOptimizedImageElement(imageName, alt, size, className = '') {
 
 // Instancia global
 window.ImageManager = new ImageManager();
-window.IconManager = window.ImageManager; // Compatibilidad
+window.IconManager = window.ImageManager;
