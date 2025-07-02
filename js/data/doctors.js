@@ -18,7 +18,7 @@ const doctorsData = [
         "hospital": {
             "name": "CADIM - La Paz",
             "address": "Ignacio Allende 2135, Los Olivos, 23040 La Paz, B.C.S.",
-            "locationUrl": "https://g.co/kgs/m59jixh"
+            "locationUrl": "https://g.co/kgs/QUeCKkW"
         },
         "whatsapp": {
             "number": "6122311713",
@@ -46,7 +46,7 @@ const doctorsData = [
         hospital: {
             name: 'CADIM - La Paz',
             address: 'Ignacio Allende 2135, Los Olivos, 23040 La Paz, B.C.S.',
-            locationUrl: 'https://g.co/kgs/m59jixh'
+            locationUrl: 'https://g.co/kgs/QUeCKkW'
         },
         whatsapp: {
             number: '6122311713',
@@ -76,7 +76,7 @@ const doctorsData = [
         "hospital": {
             "name": "CADIM - La Paz",
             "address": "Ignacio Allende 2135, Los Olivos, 23040 La Paz, B.C.S.",
-            "locationUrl": "https://g.co/kgs/m59jixh"
+            "locationUrl": "https://g.co/kgs/QUeCKkW"
         },
         "whatsapp": {
             "number": "6122311713",
@@ -106,7 +106,7 @@ const doctorsData = [
         hospital: {
             name: 'CADIM - La Paz',
             address: 'Ignacio Allende 2135, Los Olivos, 23040 La Paz, B.C.S.',
-            locationUrl: 'https://g.co/kgs/m59jixh'
+            locationUrl: 'https://g.co/kgs/QUeCKkW'
         },
         whatsapp: {
             number: '6122311713',
