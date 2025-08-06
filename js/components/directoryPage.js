@@ -37,4 +37,8 @@ class DirectoryPage {
 }
 
 // Exportar para uso global
+<<<<<<< HEAD
 window.DirectoryPage = DirectoryPage;
+=======
+window.DirectoryPage = DirectoryPage;
+>>>>>>> 67de77d832be01eebd781d6342ce835a9ceae2d6

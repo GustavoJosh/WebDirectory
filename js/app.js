@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 // ============================================================================
 // ARCHIVO: js/app.js (Inicialización principal)
 // ============================================================================
+=======
+>>>>>>> 67de77d832be01eebd781d6342ce835a9ceae2d6
 class App {
     constructor() {
         this.isInitialized = false;
@@ -27,6 +30,11 @@ class App {
             // Inicializar página de bienvenida
             this.initWelcomePage();
 
+<<<<<<< HEAD
+=======
+            window.ImageManager.initHeroBackgroundLazy();
+
+>>>>>>> 67de77d832be01eebd781d6342ce835a9ceae2d6
             // Mostrar página de bienvenida por defecto
             window.AppNavigation.showWelcome();
 
@@ -66,7 +74,11 @@ class App {
         if (window.WelcomePage && window.WelcomePage.init) {
             window.WelcomePage.init();
             console.log('🏠 Welcome page inicializada');
+<<<<<<< HEAD
         } else {
+=======
+        } else {s
+>>>>>>> 67de77d832be01eebd781d6342ce835a9ceae2d6
             console.warn('⚠️ WelcomePage no disponible');
         }
     }

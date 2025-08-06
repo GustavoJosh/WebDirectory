@@ -1,4 +1,8 @@
+<<<<<<< HEAD
     class ColorUtils {
+=======
+class ColorUtils {
+>>>>>>> 67de77d832be01eebd781d6342ce835a9ceae2d6
     static getColorClasses(color, selected = false) {
         const colors = {
             emerald: {
@@ -24,6 +28,17 @@
                 cardBg: 'gradient-pink',
                 profileBg: 'bg-gradient-to-br from-pink-50 to-pink-100',
                 borderColor: 'border-pink-200'
+<<<<<<< HEAD
+=======
+            },
+            blue: {
+                button: selected ? 'bg-blue-600 text-white shadow-md' : 'text-slate-600 hover:bg-blue-50',
+                specialty: 'text-blue-700',
+                mapButton: 'bg-blue-600 hover:bg-blue-700',
+                cardBg: 'gradient-blue',
+                profileBg: 'bg-gradient-to-br from-blue-50 to-blue-100',
+                borderColor: 'border-blue-200'
+>>>>>>> 67de77d832be01eebd781d6342ce835a9ceae2d6
             }
         };
         return colors[color] || colors.emerald;
@@ -35,4 +50,8 @@ if (typeof module !== 'undefined' && module.exports) {
     module.exports = { ColorUtils };
 } else {
     window.ColorUtils = ColorUtils;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 67de77d832be01eebd781d6342ce835a9ceae2d6

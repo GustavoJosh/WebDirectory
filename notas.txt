@@ -1,0 +1,7 @@
+Falta actualizar el numero de los doctores, en lugar de uno personal ponerles a todos el del consultorio pero con su mensaje
+predeterminado de "quiero agendar con x doctor" 
+
+terminar lo del aviso de privacidad. mejorar la vista del footer. 
+
+
+
