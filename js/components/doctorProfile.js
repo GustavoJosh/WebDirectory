@@ -35,10 +35,15 @@ class DoctorProfile {
     }
 
     static generateProfileSidebar(doctor, colorClasses) {
+        // Generate image using ImageManager
+        const imageContent = doctor.image 
+            ? window.ImageManager.getCardImage({ image: doctor.image, alt: doctor.name }, 'xl', 'rounded-full')
+            : `<div class="w-full h-full rounded-full bg-white flex items-center justify-center text-6xl">${doctor.icon}</div>`;
+
         return `
             <div class="lg:col-span-1 p-8 ${colorClasses.profileBg} flex flex-col items-center justify-center text-center border-b lg:border-b-0 lg:border-r ${colorClasses.borderColor}">
-                <div class="w-32 h-32 rounded-full bg-white border-4 ${colorClasses.borderColor} shadow-lg mb-6 flex items-center justify-center text-6xl">
-                    ${doctor.icon}
+                <div class="w-32 h-32 rounded-full bg-white border-4 ${colorClasses.borderColor} shadow-lg mb-6 overflow-hidden">
+                    ${imageContent}
                 </div>
                 <h2 class="text-2xl font-bold text-slate-800 mb-2">${doctor.name}</h2>
                 <p class="font-semibold ${colorClasses.specialty} text-center text-sm leading-relaxed">

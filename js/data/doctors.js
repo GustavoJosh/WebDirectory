@@ -2,7 +2,7 @@ const doctorsData = [
     {
         id: 1,
         name: 'Dr. Javier Hector Pérez Carcaño',
-        specialty: 'Ginecología y obstetricia - laparoscopía - Fertilidad, climaterio y menopausia .', 
+        specialty: 'Ginecología y obstetricia - laparoscopía - Fertilidad, climaterio y menopausia .',
         bio: 'Con más de 20 años de experiencia en salud femenina, me especializo en ginecología y obstetricia, ofreciendo atención integral en todas las etapas de la vida de la mujer. Brindo acompañamiento profesional y humano en procesos de fertilidad, climaterio y menopausia, con tratamientos personalizados y basados en evidencia médica.',
         services: [
             'Controles ginecológicos y obstétricos',
@@ -19,9 +19,10 @@ const doctorsData = [
         // ✨ NUEVO: Información de WhatsApp
         whatsapp: {
             number: '6122311713', // Número sin espacios ni símbolos
-            message: 'Hola Dr. Pérez, me gustaría agendar una consulta. ¿Cuál sería su disponibilidad?'
+            message: 'Hola, me gustaría agendar una consulta con el Dr. Pérez. ¿Cuál sería su disponibilidad?'
         },
         color: 'emerald',
+        image: 'drperez.webp',
         icon: '❤️'
     },
     {
@@ -44,9 +45,10 @@ const doctorsData = [
         // ✨ NUEVO: Información de WhatsApp
         whatsapp: {
             number: '6122311713',
-            message: 'Hola Dr. Aguilar, necesito una consulta de medicina interna. ¿Podría agendar una cita?'
+            message: 'Hola, necesito una consulta con el Dr. Aguilar. ¿Podría agendar una cita?'
         },
         color: 'sky',
+        image: 'draguiar.webp',
         icon: '🩺'
     },
     {
@@ -69,9 +71,10 @@ const doctorsData = [
         // ✨ NUEVO: Información de WhatsApp
         whatsapp: {
             number: '66122311713',
-            message: 'Hola Dra. Savin, me gustaría solicitar una consulta. ¿Cuáles son sus horarios disponibles?'
+            message: 'Hola, me gustaría solicitar una consulta con la Dra. Savin. ¿Cuáles son sus horarios disponibles?'
         },
         color: 'pink',
+        image: 'drablanca.webp',
         icon: '👶'
     },
     {
@@ -96,9 +99,38 @@ const doctorsData = [
         // ✨ NUEVO: Información de WhatsApp
         whatsapp: {
             number: '6122311713',
-            message: 'Hola Dr. Castro, me interesa agendar una consulta. ¿Cuándo tendría disponibilidad?'
+            message: 'Hola me interesa agendar una consulta con el Dr. Castro. ¿Cuándo tendría disponibilidad?'
         },
         color: 'blue',
+        image: 'drwiltber.webp',
+        icon: '🏥'
+    },
+    {
+        id: 5,
+        name: 'Dra. Victoria Palma Ojeda',
+        specialty: 'Ginecologia y Obstetricia, Colposcopia',
+        bio: 'Atencion de la paciente obstetrica en estado critico.  Curso de Estetica Vaginal. Cedula profesial 3300047, cedula de especialidad 4512737 ',
+        services: [
+            'Consultas ginecológicas de rutina y especializadas',
+            'Control prenatal y seguimiento del embarazo',
+            'Atención del parto y cesáreas',
+            'Manejo de patologías ginecológicas',
+            'Ultrasonido ginecológico y obstétrico',
+            'Cirugía ginecológica mínimamente invasiva',
+            'Planificación familiar y anticoncepción'
+        ],
+        hospital: {
+            name: 'CADIM - La Paz',
+            address: 'Ignacio Allende 2135, Los Olivos, 23040 La Paz, B.C.S.',
+            locationUrl: 'https://maps.google.com/?q=Hospital+Materno+Infantil+San+Rafael,+Av.+Universidad+789,+Ciudad+de+México'
+        },
+        // ✨ NUEVO: Información de WhatsApp
+        whatsapp: {
+            number: '6122311713',
+            message: 'Hola me interesa agendar una consulta con la Dra. Victoria Palma Ojeda. ¿Cuándo tendría disponibilidad?'
+        },
+        color: 'purple',
+        image: 'default.webp',
         icon: '🏥'
     }
 ];

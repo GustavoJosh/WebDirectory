@@ -2,7 +2,7 @@
 
 class ImageManager {
     constructor() {
-        this.imagePath = '/assets/images/';
+        this.imagePath = 'assets/images/';
         this.fallbackPath = 'assets/icons/';
         this.loadedImages = new Set(); // ✅ Cache de imágenes cargadas
         this.failedImages = new Set(); // ✅ Cache de imágenes fallidas
