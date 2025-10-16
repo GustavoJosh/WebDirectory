@@ -111,13 +111,9 @@ const doctorsData = [
         specialty: 'Ginecologia y Obstetricia, Colposcopia',
         bio: 'Atencion de la paciente obstetrica en estado critico.  Curso de Estetica Vaginal. Cedula profesial 3300047, cedula de especialidad 4512737 ',
         services: [
-            'Consultas ginecológicas de rutina y especializadas',
-            'Control prenatal y seguimiento del embarazo',
             'Atención del parto y cesáreas',
             'Manejo de patologías ginecológicas',
-            'Ultrasonido ginecológico y obstétrico',
-            'Cirugía ginecológica mínimamente invasiva',
-            'Planificación familiar y anticoncepción'
+            'Cirugía ginecológica mínimamente invasiva',   
         ],
         hospital: {
             name: 'CADIM - La Paz',
@@ -130,7 +126,7 @@ const doctorsData = [
             message: 'Hola me interesa agendar una consulta con la Dra. Victoria Palma Ojeda. ¿Cuándo tendría disponibilidad?'
         },
         color: 'purple',
-        image: 'default.webp',
+        image: 'drapalma.webp',
         icon: '🏥'
     }
 ];

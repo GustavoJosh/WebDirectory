@@ -32,6 +32,14 @@ class ColorUtils {
                 cardBg: 'gradient-blue',
                 profileBg: 'bg-gradient-to-br from-blue-50 to-blue-100',
                 borderColor: 'border-blue-200'
+            },
+            purple: {
+                button: selected ? 'bg-purple-600 text-white shadow-md' : 'text-slate-600 hover:bg-purple-50',
+                specialty: 'text-purple-700',
+                mapButton: 'bg-purple-600 hover:bg-purple-700',
+                cardBg: 'gradient-purple',
+                profileBg: 'bg-gradient-to-br from-purple-50 to-purple-100',
+                borderColor: 'border-purple-200'
             }
         };
         return colors[color] || colors.emerald;
